@@ -1,44 +1,93 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Nav.css';
 
 const Nav = () => {
 
     const location = useLocation();
+    const [scrolled, setScrolled] = useState(false);
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const offset = window.scrollY;
+            if(offset > 50) {
+                setScrolled(true);
+            } else {
+                setScrolled(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        }
+    }, []);
+
+    const toggleMenu = () => {
+        setMenuOpen(!menuOpen);
+    };
 
     return (
-        <nav id='nav'>
-            <ul className='links'>
-                <li className={location.pathname === '/' ? 'active' : ''}>
-                    <Link to='/'>Leonard Hawkes</Link>
+        <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+            <div className='navbar-container'>
+                <Link to="/" className='navbar-logo'>
+                    <span className='logo-text'>LH</span>
+                </Link>
+
+                <div className='menu-icon' onClick={toggleMenu}>
+                    <i className={menuOpen ? 'fas fa-times' : 'fas fa-bars'} />
+                </div>
+            </div>
+            <ul className={`nav-menu ${menuOpen ? 'active' : ''}`}>
+                <li className='nav-item'>
+                    <Link 
+                        to='/'
+                        className={location.pathname === '/' ? 'nav-link active' : 'nav-link'}
+                        onClick={() => setMenuOpen(false)}
+                    >
+                        Home
+                    </Link>
                 </li>
-                <li className={location.pathname === '/dj-events' ? 'active' : ''}>
-                    <Link to='/'>DJ Events</Link>
-                </li>
-                <li className={location.pathname === '/blog' ? 'active' : ''}>
-                    <Link to='/'>Blog</Link>
-                </li>
-                <li className={location.pathname === '/#footer' ? 'active' : ''}>
-                    <a href='#footer'>Contact</a>
-                </li>
+                <li className="nav-item">
+                        <Link 
+                            to="/about" 
+                            className={location.pathname === '/about' ? 'nav-link active' : 'nav-link'}
+                            onClick={() => setMenuOpen(false)}
+                        >
+                            About
+                        </Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link 
+                            to="/projects" 
+                            className={location.pathname === '/projects' ? 'nav-link active' : 'nav-link'}
+                            onClick={() => setMenuOpen(false)}
+                        >
+                            Projects
+                        </Link>
+                    </li>
+                    <li className="nav-item">
+                        <a 
+                            href="#contact" 
+                            className="nav-link"
+                            onClick={() => setMenuOpen(false)}
+                        >
+                            Contact
+                        </a>
+                    </li>
             </ul>
-            <ul className='icons'>
-                <li>
-                    <a href='https://www.linkedin.com/in/leonardhawkes' className='icon brands fa-linkedin'>
-                        <span className='label'>LinkedIn</span>
-                    </a>
-                </li>
-                <li>
-                    <a href='https://www.github.com/leonardhawkes' className='icon brands fa-github'>
-                        <span className='label'>Github</span>
-                    </a>
-                </li>
-                <li>
-                    <a href='https://www.linkedin.com/in/leonardhawkes' className='icon brands alt fa-adobe'>
-                        <span className='label'>Resume</span>
-                    </a>
-                </li>
-            </ul>
+            <div className='social-icons'>
+                <a href='https://www.linkedin.com/in/leonardhawkes' target='_blank' rel='noopner noreferrer'>
+                    <i className="fab fa-linkedin" />
+                </a>
+                <a href="https://www.github.com/leonardhawkes" target="_blank" rel="noopener noreferrer">
+                    <i className="fab fa-github" />
+                </a>
+                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+                    <i className="fas fa-file-alt" />
+                </a>
+            </div>
         </nav>
     );
 };
