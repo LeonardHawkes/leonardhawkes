@@ -8,7 +8,7 @@ const Home = () => {
     const projects = [
         {
             title: 'PilotHelper',
-            subTitle: 'Secure chat application for pilots',
+            subtitle: 'Secure chat application for pilots',
             imageUrl: '../assets/PilotHelper.png',
             link: 'https://www.pilothelper.com',
             description: 'PilotHelper is a secure chat application designed to support pilots with real-time assistance. It features a custom GPT-powered AI assistant for contextual responses, MongoDB for message storage, and RESTful APIs for seamless data management. This project showcases expertise in state management, responsive UI design, and secure communication protocols.',
