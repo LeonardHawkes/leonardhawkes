@@ -1,7 +1,6 @@
+// src/pages/Home.tsx
 import React from "react";
-import Intro from '../components/Intro';
 import ProjectCard from '../components/ProjectCard';
-// import ConferenceTalk from '../components/ConferenceTalk';
 import './Home.css';
 
 const Home = () => {
@@ -9,81 +8,190 @@ const Home = () => {
         {
             title: 'PilotHelper',
             subtitle: 'Secure chat application for pilots',
-            imageUrl: '../assets/PilotHelper.png',
+            imageKey: 'pilotHelper',
             link: 'https://www.pilothelper.com',
-            description: 'PilotHelper is a secure chat application designed to support pilots with real-time assistance. It features a custom GPT-powered AI assistant for contextual responses, MongoDB for message storage, and RESTful APIs for seamless data management. This project showcases expertise in state management, responsive UI design, and secure communication protocols.',
-            codeLink: ''
+            description: 'PilotHelper is a secure chat application designed to support pilots with real-time assistance. It features a custom GPT-powered AI assistant for contextual responses, MongoDB for message storage, and RESTful APIs for seamless data management.',
+            codeLink: '',
+            techStack: ['React', 'Node.js', 'MongoDB', 'OpenAI API', 'Express']
         },
         {
             title: 'Vtraxx',
             subtitle: 'Spotify Top Track Generator',
-            imageUrl: 'images/Vtraxx.jpg',
+            imageKey: 'vtraxx',
             link: 'https://vtraxx.herokuapp.com',
-            description: 'I created this app using Spotify\'s API combined with Node.js and javascript. After asking for the user\'s Spotify login, it gathers their most recent top 10 and displays it on a cassette tape. Originally this generated 10 tracks but I reduced it to 5 for now so I could increase the font and make the tracks easier to read. This project is important to me because I learned JavaScript as well as how to implement APIs.',
-            codeLink: 'https://github.com/LeonardHawkes/vtraxx'
-          },
-          {
+            description: 'An application that uses Spotify\'s API to gather a user\'s most recent top tracks and displays them on a cassette tape visual. Originally showed 10 tracks, now displays 5 with larger font for improved readability.',
+            codeLink: 'https://github.com/LeonardHawkes/vtraxx',
+            techStack: ['JavaScript', 'Node.js', 'Spotify API', 'Express', 'HTML/CSS']
+        },
+        {
             title: 'Covid-19 Tracker',
-            subtitle: 'Coronavirus worldwide Cases',
-            imageUrl: 'images/Covid-19.jpg',
+            subtitle: 'Coronavirus Worldwide Cases Dashboard',
+            imageKey: 'covidTracker',
             link: 'https://covid-2021-tracker.herokuapp.com',
-            description: 'I created this program using Java and Spring Framework. The application collects the raw global Covid-19 cases and displays it as a readable table. This project was interesting because I learned how to implement Spring into my Java code and utilizing Java 12 to host java applications on the internet.',
-            codeLink: 'https://github.com/LeonardHawkes/coronavirus-tracker'
-          },
-          {
+            description: 'A Java Spring application that collects and displays global COVID-19 case data in a readable, interactive table format. Demonstrates implementation of Spring Framework and Java 12 web application deployment.',
+            codeLink: 'https://github.com/LeonardHawkes/coronavirus-tracker',
+            techStack: ['Java', 'Spring Boot', 'Thymeleaf', 'Bootstrap', 'REST API']
+        },
+        {
             title: 'Snake',
-            subtitle: 'Snake clone created in Java',
-            imageUrl: 'images/SnakeGame.gif',
+            subtitle: 'Java-based Snake Game Clone',
+            imageKey: 'snakeGame',
             link: '',
-            description: 'I created this in Java using Javax and implementing listeners. The user moves the snake with the arrow keys. I used a for loop to increase the snake\'s size when it consumes the pixel and created a score method to increment as you collect pixels. I created collision detection for each side of the border(up, down, left, right) and also created a collision if the head of the snake touches any of the other body parts.',
-            codeLink: 'https://github.com/LeonardHawkes/Snake'
-          },
-          {
+            description: 'A Java implementation of the classic Snake game with arrow key controls. Features include dynamic snake growth, score tracking, and comprehensive collision detection for borders and self-collision.',
+            codeLink: 'https://github.com/LeonardHawkes/Snake',
+            techStack: ['Java', 'Javax Swing', 'AWT', 'Event Listeners']
+        },
+        {
             title: 'Flappy Bird',
-            subtitle: 'Flappy Bird clone created in Java',
-            imageUrl: 'images/FlappyBird.gif',
+            subtitle: 'Java-based Flappy Bird Clone',
+            imageKey: 'flappyBird',
             link: '',
-            description: 'I created this in Java using Javax and implementing listeners. The user moves the bird by clicking or they can use the spacebar. The game will continue indefinitely and will continue generating random pipes as obstacles. Since Chrome doesn\'t support Java Applications anymore I recorded some gameplay and converted said gameplay into a gif to demonstrate all the features.',
-            codeLink: 'https://github.com/LeonardHawkes/FlappyBirdJava'
-          },
-          {
+            description: 'A recreation of the popular Flappy Bird game built with Java. Features click or spacebar controls and procedurally generated obstacles for infinite gameplay.',
+            codeLink: 'https://github.com/LeonardHawkes/FlappyBirdJava',
+            techStack: ['Java', 'Javax Swing', 'AWT', 'Event Listeners']
+        },
+        {
             title: 'Java Quiz',
-            subtitle: '10 Question Java Quiz',
-            imageUrl: 'images/OnlineTest.gif',
+            subtitle: '10 Question Java Quiz Application',
+            imageKey: 'javaQuiz',
             link: '',
-            description: 'I created this in Javax swing and awt to create a JFrame and implementing listeners. I use array instead of a database so it doesn\'t require as much memory. This also cannot be run through HTML so I recorded myself running the application and converted it into a gif to demonstrate the questions available in the app.',
-            codeLink: 'https://github.com/LeonardHawkes/JavaTest'
-          }
-        ];
+            description: 'An interactive quiz application built with Java Swing that tests knowledge of Java programming. Uses arrays for efficient memory usage instead of a database.',
+            codeLink: 'https://github.com/LeonardHawkes/JavaTest',
+            techStack: ['Java', 'Javax Swing', 'AWT', 'Event Listeners']
+        }
+    ];
       
-        return (
-            <div id="main">
-              <Intro />
-              
-              {/* Featured Conference Talk */}
-              {/* <ConferenceTalk /> */}
-              
-              {/* Featured Post */}
-              <article className="post featured">
-                <header className="major">
-                  <h2>
-                    <a href="https://www.linkedin.com/in/leonardhawkes/">My name is Leonard Hawkes</a>
-                  </h2>
-                  <p>
-                    I'm a passionate developer, but more importantly I'm passionate
-                    about technology. This website is meant to showcase my skills and aptitude.
-                  </p>
-                </header>
-              </article>
-        
-              {/* Projects Section */}
-              <section className="posts">
-                {projects.map((project, index) => (
-                  <ProjectCard key={index} project={project} />
-                ))}
-              </section>
-            </div>
-          );
+    return (
+        <div className="home-container">
+            {/* Hero Section */}
+            <section className="hero-section">
+                <div className="hero-content">
+                    <h1>Leonard Hawkes</h1>
+                    <h2>Software Developer</h2>
+                    <p>
+                        I'm a passionate developer with a focus on creating robust, user-friendly applications.
+                        My expertise spans frontend, backend, and mobile development technologies.
+                    </p>
+                    <div className="hero-buttons">
+                        <a href="#projects" className="button">View My Work</a>
+                        <a href="#contact" className="button secondary">Contact Me</a>
+                    </div>
+                </div>
+            </section>
+
+            {/* About Section */}
+            <section className="about-section section-container">
+                <div className="section-header">
+                    <h2>About Me</h2>
+                    <div className="section-divider"></div>
+                </div>
+                <div className="about-content">
+                    <p>
+                        I'm a passionate developer, but more importantly, I'm passionate about technology.
+                        I enjoy building applications that solve real-world problems and provide value to users.
+                        With experience in various programming languages and frameworks, I approach each project
+                        with a focus on clean code, performance, and user experience.
+                    </p>
+                    <p>
+                        When I'm not coding, you might find me exploring new technologies, contributing to open source,
+                        or sharing knowledge with the developer community.
+                    </p>
+                </div>
+            </section>
+
+            {/* Projects Section */}
+            <section id="projects" className="projects-section section-container">
+                <div className="section-header">
+                    <h2>My Projects</h2>
+                    <div className="section-divider"></div>
+                </div>
+                <div className="projects-grid">
+                    {projects.map((project, index) => (
+                        <ProjectCard key={index} project={project} />
+                    ))}
+                </div>
+            </section>
+
+            {/* Skills Section */}
+            <section className="skills-section section-container">
+                <div className="section-header">
+                    <h2>My Skills</h2>
+                    <div className="section-divider"></div>
+                </div>
+                <div className="skills-container">
+                    <div className="skill-category">
+                        <h3>Frontend</h3>
+                        <div className="skills-grid">
+                            <div className="skill-item">
+                                <i className="fab fa-react"></i>
+                                <span>React</span>
+                            </div>
+                            <div className="skill-item">
+                                <i className="fab fa-js-square"></i>
+                                <span>JavaScript</span>
+                            </div>
+                            <div className="skill-item">
+                                <i className="fab fa-html5"></i>
+                                <span>HTML5</span>
+                            </div>
+                            <div className="skill-item">
+                                <i className="fab fa-css3-alt"></i>
+                                <span>CSS3</span>
+                            </div>
+                            <div className="skill-item">
+                                <i className="fab fa-sass"></i>
+                                <span>Sass</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="skill-category">
+                        <h3>Backend</h3>
+                        <div className="skills-grid">
+                            <div className="skill-item">
+                                <i className="fab fa-node-js"></i>
+                                <span>Node.js</span>
+                            </div>
+                            <div className="skill-item">
+                                <i className="fab fa-java"></i>
+                                <span>Java</span>
+                            </div>
+                            <div className="skill-item">
+                                <i className="fas fa-leaf"></i>
+                                <span>Spring</span>
+                            </div>
+                            <div className="skill-item">
+                                <i className="fas fa-database"></i>
+                                <span>MongoDB</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="skill-category">
+                        <h3>Tools & Others</h3>
+                        <div className="skills-grid">
+                            <div className="skill-item">
+                                <i className="fab fa-git-alt"></i>
+                                <span>Git</span>
+                            </div>
+                            <div className="skill-item">
+                                <i className="fab fa-github"></i>
+                                <span>GitHub</span>
+                            </div>
+                            <div className="skill-item">
+                                <i className="fas fa-cloud"></i>
+                                <span>Heroku</span>
+                            </div>
+                            <div className="skill-item">
+                                <i className="fas fa-server"></i>
+                                <span>RESTful APIs</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    );
 };
 
 export default Home;

@@ -1,70 +1,96 @@
+// src/components/Footer.tsx
 import React from "react";
-import { Link } from "react-router-dom";
+import "./Footer.css";
 
 const Footer = () => {
-    return (
-        <footer id="footer">
-            <section className="contact-section">
-                <h2>Get In Touch</h2>
-                <p>
-                    I'm always interested in new opportunities and collaborations.
-                    Feel free to reach out if you have a project in mind or just want to connect!
-                </p>
+  const currentYear = new Date().getFullYear();
 
-                <form method="post" action="#">
-                    <div className="fields">
-                        <div className="field">
-                            <label htmlFor="name">Name</label>
-                            <input type="text" name="name" id="name" />
-                        </div>
-                        <div className="field">
-                            <label htmlFor="email">Email</label>
-                            <input type="email" name="email" id="email" />
-                        </div>
-                        <div className="field">
-                            <label htmlFor="message">Message</label>
-                            <textarea name="message" id="message" rows={3}></textarea>
-                        </div>
-                    </div>
-                    <ul className="actions">
-                        <li>
-                            <input type="submit" value="Send Message" />
-                        </li>
-                    </ul>
-                </form>
-            </section>
+  return (
+    <footer id="contact" className="footer">
+      <div className="footer-container">
+        <div className="footer-top">
+          <div className="footer-info">
+            <h2>Let's Connect</h2>
+            <p>
+              I'm always open to discussing new projects, creative ideas or
+              opportunities to be part of your vision.
+            </p>
+          </div>
 
-            <section className="split contact">
-                <section className="alt">
-                    <h3>Location</h3>
-                    <p>Brooklyn, NY</p>
-                </section>
-                <section>
-                    <h3>Email</h3>
-                    <p><a href="mailto:contact@leonardhawkesjr@gmail.com">contact@leonardhawkesjr@gmail.com</a></p>
-                </section>
-                <section>
-                    <h3>Social</h3>
-                    <ul className="icons alt">
-                        <li>
-                            <a href="https://www.linkedin.com/in/leonardhawkes" className="icon brands alt fa-linkedin">
-                                <span className="label">LinkedIn</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.github.com/leonardhawkes" className="icon brands alt fa-github">
-                                <span className="label">Github</span>
-                            </a>
-                        </li>
-                    </ul>
-                </section>
-            </section>
-
-            <div className="copyright">
-                <p>&copy; {new Date().getFullYear()} Leonard Hawkes. All Rights Reserved.</p>
+          <div className="footer-contact">
+            <h3>Contact Info</h3>
+            <div className="contact-item">
+              <i className="fas fa-envelope"></i>
+              <a href="mailto:leonardhawkesjr@gmail.com">
+                leonardhawkesjr@gmail.com
+              </a>
             </div>
-        </footer>
-    );
+            <div className="contact-item">
+              <i className="fas fa-map-marker-alt"></i>
+              <span>Brooklyn, NY</span>
+            </div>
+          </div>
+
+          <div className="footer-social">
+            <h3>Social Media</h3>
+            <div className="social-links">
+              <a
+                href="https://www.linkedin.com/in/leonardhawkes"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fab fa-linkedin"></i>
+              </a>
+              <a
+                href="https://www.github.com/leonardhawkes"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fab fa-github"></i>
+              </a>
+              <a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fas fa-file-alt"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className="footer-form">
+          <h3>Send Me a Message</h3>
+          <form>
+            <div className="form-row">
+              <div className="form-group">
+                <input type="text" id="name" placeholder="Your Name" required />
+              </div>
+              <div className="form-group">
+                <input type="email" id="email" placeholder="Your Email" required />
+              </div>
+            </div>
+            <div className="form-group">
+              <input type="text" id="subject" placeholder="Subject" required />
+            </div>
+            <div className="form-group">
+              <textarea id="message" placeholder="Your Message" rows={4} required></textarea>
+            </div>
+            <button type="submit" className="button">
+              Send Message
+            </button>
+          </form>
+        </div>
+
+        <div className="footer-bottom">
+          <p>&copy; {currentYear} Leonard Hawkes. All rights reserved.</p>
+          <p>
+            Built with <i className="fas fa-heart"></i> using React
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
 };
 
 export default Footer;
