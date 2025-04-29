@@ -146,6 +146,40 @@
     padding: 1rem;
   }
   
+  /* Form Status Messages */
+  .form-success-message,
+  .form-error-message {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: 500;
+    animation: fadeIn 0.3s ease-in;
+  }
+  
+  .form-success-message {
+    background-color: rgba(46, 213, 115, 0.15);
+    color: #2ed573;
+    border: 1px solid #2ed573;
+  }
+  
+  .form-error-message {
+    background-color: rgba(255, 71, 87, 0.15);
+    color: #ff4757;
+    border: 1px solid #ff4757;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Disable button styles */
+  .footer-form .button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+  
   .footer-bottom {
     text-align: center;
     padding: 2rem 0;
