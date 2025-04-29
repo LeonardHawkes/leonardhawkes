@@ -52,7 +52,7 @@ const Footer = () => {
                     <i className="fab fa-medium" />
                 </a>
               <a
-                href="/resume.pdf"
+                href="/PrivateResume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
               >

@@ -98,7 +98,7 @@ const Nav = () => {
                     </li>
             </ul>
             <div className='social-icons'>
-                <a href='https://www.linkedin.com/in/leonardhawkes' target='_blank' rel='noopner noreferrer'>
+                <a href='https://www.linkedin.com/in/leonardhawkes' target='_blank' rel='noopener noreferrer'>
                     <i className="fab fa-linkedin" />
                 </a>
                 <a href="https://www.github.com/leonardhawkes" target="_blank" rel="noopener noreferrer">
@@ -107,7 +107,7 @@ const Nav = () => {
                 <a href="https://medium.com/@leonardhawkesjr" target="_blank" rel="noopener noreferrer">
                     <i className="fab fa-medium" />
                 </a>
-                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+                <a href="/PrivateResume.pdf" target="_blank" rel="noopener noreferrer">
                     <i className="fas fa-file-alt" />
                 </a>
             </div>
