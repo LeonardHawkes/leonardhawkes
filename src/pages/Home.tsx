@@ -9,7 +9,7 @@ const Home = () => {
             title: 'PilotHelper',
             subtitle: 'Secure chat application for pilots',
             imageKey: 'pilotHelper',
-            link: 'https://www.pilothelper.com',
+            link: '',
             description: 'PilotHelper is a secure chat application designed to support pilots with real-time assistance. It features a custom GPT-powered AI assistant for contextual responses, MongoDB for message storage, and RESTful APIs for seamless data management.',
             codeLink: '',
             techStack: ['React', 'Node.js', 'MongoDB', 'OpenAI API', 'Express']
@@ -18,7 +18,7 @@ const Home = () => {
             title: 'Vtraxx',
             subtitle: 'Spotify Top Track Generator',
             imageKey: 'vtraxx',
-            link: 'https://vtraxx.herokuapp.com',
+            link: '',
             description: 'An application that uses Spotify\'s API to gather a user\'s most recent top tracks and displays them on a cassette tape visual. Originally showed 10 tracks, now displays 5 with larger font for improved readability.',
             codeLink: 'https://github.com/LeonardHawkes/vtraxx',
             techStack: ['JavaScript', 'Node.js', 'Spotify API', 'Express', 'HTML/CSS']
@@ -27,7 +27,7 @@ const Home = () => {
             title: 'Covid-19 Tracker',
             subtitle: 'Coronavirus Worldwide Cases Dashboard',
             imageKey: 'covidTracker',
-            link: 'https://covid-2021-tracker.herokuapp.com',
+            link: '',
             description: 'A Java Spring application that collects and displays global COVID-19 case data in a readable, interactive table format. Demonstrates implementation of Spring Framework and Java 12 web application deployment.',
             codeLink: 'https://github.com/LeonardHawkes/coronavirus-tracker',
             techStack: ['Java', 'Spring Boot', 'Thymeleaf', 'Bootstrap', 'REST API']
