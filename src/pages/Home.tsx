@@ -17,6 +17,16 @@ const Home = () => {
             techStack: ['React', 'Node.js', 'MongoDB', 'OpenAI API', 'Express']
         },
         {
+            title: 'Snake',
+            subtitle: 'Interactive Snake Game',
+            imageKey: 'snakeGame',
+            link: '',
+            description: 'A classic Snake game built with React and TypeScript. Control the snake to eat food and grow longer without hitting the walls or yourself. Features responsive design, touch controls for mobile, and increasing difficulty.',
+            codeLink: 'https://github.com/LeonardHawkes/Snake',
+            demoPath: '/snake', // Link to playable demo
+            techStack: ['React', 'TypeScript', 'CSS Grid', 'Game Logic']
+        },
+        {
             title: 'Vtraxx',
             subtitle: 'Spotify Top Track Generator',
             imageKey: 'vtraxx',
@@ -33,15 +43,6 @@ const Home = () => {
             description: 'A Java Spring application that collects and displays global COVID-19 case data in a readable, interactive table format. Demonstrates implementation of Spring Framework and Java 12 web application deployment.',
             codeLink: 'https://github.com/LeonardHawkes/coronavirus-tracker',
             techStack: ['Java', 'Spring Boot', 'Thymeleaf', 'Bootstrap', 'REST API']
-        },
-        {
-            title: 'Snake',
-            subtitle: 'Java-based Snake Game Clone',
-            imageKey: 'snakeGame',
-            link: '',
-            description: 'A Java implementation of the classic Snake game with arrow key controls. Features include dynamic snake growth, score tracking, and comprehensive collision detection for borders and self-collision.',
-            codeLink: 'https://github.com/LeonardHawkes/Snake',
-            techStack: ['Java', 'Javax Swing', 'AWT', 'Event Listeners']
         },
         {
             title: 'Flappy Bird',

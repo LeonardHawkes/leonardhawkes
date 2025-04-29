@@ -1,0 +1,210 @@
+.snake-game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  }
+  
+  .game-info {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  .game-info h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color, #3a86ff);
+  }
+  
+  .score {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #9bf1ff;
+  }
+  
+  .controls-info {
+    font-size: 0.9rem;
+    color: #ccc;
+  }
+  
+  .controls-info p {
+    margin: 0.25rem 0;
+  }
+  
+  .game-board {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+    gap: 1px;
+    width: 100%;
+    aspect-ratio: 1/1;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    margin-bottom: 1rem;
+  }
+  
+  .cell {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(30, 30, 30, 0.8);
+    border-radius: 2px;
+  }
+  
+  .snake {
+    background-color: #9bf1ff;
+    border-radius: 3px;
+  }
+  
+  .head {
+    background-color: #3a86ff;
+    border-radius: 4px;
+  }
+  
+  .food {
+    background-color: #ff006e;
+    border-radius: 50%;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 10;
+    border-radius: 4px;
+  }
+  
+  .message {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .final-score {
+    font-size: 1.2rem;
+    color: #9bf1ff;
+    margin-bottom: 1.5rem;
+  }
+  
+  .overlay button {
+    background-color: #3a86ff;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .overlay button:hover {
+    background-color: #2563eb;
+  }
+  
+  .mobile-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 200px;
+    margin-bottom: 1rem;
+  }
+  
+  .horizontal-controls {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .control-btn {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(58, 134, 255, 0.2);
+    border: 2px solid #3a86ff;
+    color: white;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin: 0.25rem;
+  }
+  
+  .control-btn:hover, .control-btn:active {
+    background-color: rgba(58, 134, 255, 0.4);
+  }
+  
+  .control-btn span {
+    pointer-events: none;
+  }
+  
+  .game-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .game-buttons button {
+    background-color: #3a86ff;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .game-buttons button:hover {
+    background-color: #2563eb;
+  }
+  
+  @media (max-width: 768px) {
+    .snake-game-container {
+      padding: 0.5rem;
+    }
+    
+    .game-info h2 {
+      font-size: 1.5rem;
+    }
+    
+    .score {
+      font-size: 1.2rem;
+    }
+    
+    .controls-info {
+      font-size: 0.8rem;
+    }
+    
+    .control-btn {
+      width: 40px;
+      height: 40px;
+      font-size: 1.2rem;
+    }
+    
+    .game-buttons button {
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+    }
+  }
