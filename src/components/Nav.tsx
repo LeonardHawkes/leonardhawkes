@@ -24,8 +24,28 @@ const Nav = () => {
         }
     }, []);
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [location.pathname]);
+
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
+    };
+
+    const handleContactClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        e.preventDefault();
+        
+        // Close mobile menu if open
+        setMenuOpen(false);
+        
+        // Smooth scroll to contact section
+        const contactElement = document.getElementById('contact');
+        if (contactElement) {
+            contactElement.scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
     };
 
     return (
@@ -49,7 +69,7 @@ const Nav = () => {
                         Home
                     </Link>
                 </li>
-                <li className="nav-item">
+                {/* <li className="nav-item">
                         <Link 
                             to="/about" 
                             className={location.pathname === '/about' ? 'nav-link active' : 'nav-link'}
@@ -57,21 +77,21 @@ const Nav = () => {
                         >
                             About
                         </Link>
-                    </li>
+                    </li> */}
                     <li className="nav-item">
                         <Link 
-                            to="/projects" 
-                            className={location.pathname === '/projects' ? 'nav-link active' : 'nav-link'}
+                            to="/blog" 
+                            className={location.pathname === '/blog' ? 'nav-link active' : 'nav-link'}
                             onClick={() => setMenuOpen(false)}
                         >
-                            Projects
+                            Blog
                         </Link>
                     </li>
                     <li className="nav-item">
                         <a 
                             href="#contact" 
                             className="nav-link"
-                            onClick={() => setMenuOpen(false)}
+                            onClick={handleContactClick}
                         >
                             Contact
                         </a>
@@ -83,6 +103,9 @@ const Nav = () => {
                 </a>
                 <a href="https://www.github.com/leonardhawkes" target="_blank" rel="noopener noreferrer">
                     <i className="fab fa-github" />
+                </a>
+                <a href="https://medium.com/@leonardhawkesjr" target="_blank" rel="noopener noreferrer">
+                    <i className="fab fa-medium" />
                 </a>
                 <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
                     <i className="fas fa-file-alt" />

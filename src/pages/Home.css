@@ -89,6 +89,7 @@
   /* About Section */
   .about-section {
     background-color: var(--light-bg);
+    margin-bottom: 5rem;
   }
   
   .about-content {
@@ -101,6 +102,71 @@
     margin-bottom: 1.5rem;
     font-size: 1.1rem;
     color: var(--text-muted);
+  }
+
+  /* Latest Blog Post Feature */
+.latest-blog {
+    background-color: var(--dark-bg);
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  
+  .featured-blog-post {
+    display: flex;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border-color);
+  }
+  
+  .featured-blog-post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    border-color: var(--primary-color);
+  }
+  
+  .blog-image {
+    flex: 0 0 40%;
+    overflow: hidden;
+  }
+  
+  .blog-image-container {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .blog-image-container svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .blog-content {
+    flex: 0 0 60%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .blog-content h3 {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+  }
+  
+  .blog-content p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+  
+  .blog-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: auto;
   }
   
   /* Projects Section */
