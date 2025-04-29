@@ -2,6 +2,8 @@
 import React from "react";
 import ProjectCard from '../components/ProjectCard';
 import './Home.css';
+import { Link } from "react-router-dom";
+import BlogPostImage from "../components/BlogPostImage";
 
 const Home = () => {
     const projects = [
@@ -97,6 +99,34 @@ const Home = () => {
                         or sharing knowledge with the developer community.
                     </p>
                 </div>
+            </section>
+            {/* Latest Blog Post Feature */}
+            <section className="latest-blog">
+                <h2>Latest from My Blog</h2>
+                <article className="featured-blog-post">
+                    <div className="blog-image">
+                        <BlogPostImage />
+                    </div>
+                    <div className="blog-content">
+                        <h3>How NLP & LLMs Are Reshaping Finance</h3>
+                        <p>
+                            An exploration of how Natural Language Processing and Large Language Models 
+                            are revolutionizing the financial industry through improved analysis, 
+                            automation, and customer service.
+                        </p>
+                        <div className="blog-actions">
+                            <a 
+                                href="https://medium.com/@leonardhawkesjr/how-nlp-llms-are-reshaping-finance-c82afeda5990" 
+                                className="button"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Read on Medium
+                            </a>
+                            <Link to="/blog" className="button alt">View All Posts</Link>
+                        </div>
+                    </div>
+                </article>
             </section>
 
             {/* Projects Section */}
