@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Nav from './components/Nav';
 // import DJEvents from './pages/DJEvents';
 import Blog from './pages/Blog';
+import Snake from './pages/Snake';
 import Footer from './components/Footer';
 import './App.css';
 
@@ -13,7 +14,7 @@ const App = () => {
     //Initialize EmailJS with your public key
     emailjs.init("K6j47qyf3_C62qXBU")
   }, []);
-  
+
   return (
     <Router>
       <div className='app-container'>
@@ -22,7 +23,7 @@ const App = () => {
         <main className='content-container'>
           <Routes>
             <Route path='/' element={<Home />} />
-            {/* <Route path='/dj-events' element={<DJEvents />} /> */}
+            <Route path='/snake' element={<Snake />} />
             <Route path='/blog' element={<Blog />} /> 
           </Routes>
         </main>

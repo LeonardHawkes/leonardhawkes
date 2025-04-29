@@ -1,0 +1,118 @@
+.snake-page {
+    padding-top: 5rem;
+    min-height: 100vh;
+    width: 100%;
+  }
+  
+  .snake-page-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .snake-page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .snake-page-header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color, #3a86ff);
+    background-image: linear-gradient(45deg, var(--primary-color, #3a86ff), var(--secondary-color, #8338ec));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .snake-page-header p {
+    font-size: 1.2rem;
+    color: var(--text-muted, #8b949e);
+  }
+  
+  .game-wrapper {
+    margin: 2rem 0;
+  }
+  
+  .project-description {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-top: 3rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .project-description h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+  }
+  
+  .project-description h3 {
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem;
+    color: var(--primary-color, #3a86ff);
+  }
+  
+  .project-description p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #ccc;
+    margin-bottom: 1.5rem;
+  }
+  
+  .project-description ul {
+    margin-bottom: 2rem;
+    padding-left: 1.5rem;
+  }
+  
+  .project-description li {
+    color: #ccc;
+    margin-bottom: 0.75rem;
+    font-size: 1.05rem;
+    line-height: 1.5;
+  }
+  
+  .code-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  
+  .code-links .button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: transparent;
+    border: 2px solid var(--primary-color, #3a86ff);
+    color: var(--primary-color, #3a86ff);
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .code-links .button:hover {
+    background-color: var(--primary-color, #3a86ff);
+    color: #fff;
+    transform: translateY(-2px);
+  }
+  
+  .code-links i {
+    font-size: 1.2rem;
+  }
+  
+  @media (max-width: 768px) {
+    .snake-page-content {
+      padding: 1.5rem;
+    }
+    
+    .snake-page-header h1 {
+      font-size: 2.5rem;
+    }
+    
+    .project-description {
+      padding: 1.5rem;
+    }
+  }
