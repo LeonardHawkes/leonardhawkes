@@ -42,16 +42,34 @@ const SnakeGame: React.FC = () => {
   const foodRef = useRef(food);
   const gameStatusRef = useRef(gameStatus);
   const scoreRef = useRef(score);
+  const speedRef = useRef(speed);
   const gameLoopRef = useRef<number | null>(null);
+  const lastUpdateTimeRef = useRef<number>(0);
 
   // Update refs when state changes
   useEffect(() => {
     directionRef.current = direction;
+  }, [direction]);
+
+  useEffect(() => {
     snakeRef.current = snake;
+  }, [snake]);
+
+  useEffect(() => {
     foodRef.current = food;
+  }, [food]);
+
+  useEffect(() => {
     gameStatusRef.current = gameStatus;
+  }, [gameStatus]);
+
+  useEffect(() => {
     scoreRef.current = score;
-  }, [direction, snake, food, gameStatus, score]);
+  }, [score]);
+
+  useEffect(() => {
+    speedRef.current = speed;
+  }, [speed]);
 
   // Generate random food position
   const generateFood = useCallback((): {x: number, y: number} => {
@@ -69,7 +87,7 @@ const SnakeGame: React.FC = () => {
   }, []);
 
   // Check if snake collided with itself or walls
-  const checkCollision = (head: { x: number; y: number }, snakeBody: Array<{ x: number; y: number }> = snakeRef.current): boolean => {
+  const checkCollision = useCallback((head: { x: number; y: number }, snakeBody: Array<{ x: number; y: number }> = snakeRef.current): boolean => {
     // Check wall collision
     if (head.x < 0 || head.x >= GRID_SIZE || head.y < 0 || head.y >= GRID_SIZE) {
       return true;
@@ -83,7 +101,7 @@ const SnakeGame: React.FC = () => {
     }
 
     return false;
-  };
+  }, []);
 
   // Move the snake
   const moveSnake = useCallback(() => {
@@ -122,47 +140,96 @@ const SnakeGame: React.FC = () => {
     currentSnake.unshift(head);
 
     // Check if snake ate food
+    let ateFood = false;
     if (head.x === foodRef.current.x && head.y === foodRef.current.y) {
+      ateFood = true;
       // Increase score
-      setScore(scoreRef.current + 1);
-      
-      // Increase speed slightly
-      if (scoreRef.current % 5 === 0) {
-        setSpeed(prevSpeed => Math.max(60, prevSpeed - 10));
-      }
+      const newScore = scoreRef.current + 1;
+      setScore(newScore);
       
       // Generate new food
-      setFood(generateFood());
+      const newFood = generateFood();
+      setFood(newFood);
+      
+      // Increase speed slightly
+      if (newScore % 5 === 0) {
+        const newSpeed = Math.max(60, speedRef.current - 10);
+        setSpeed(newSpeed);
+      }
     } else {
       // Remove tail if no food eaten
       currentSnake.pop();
     }
 
     setSnake(currentSnake);
-  }, [generateFood]);
+  }, [checkCollision, generateFood]);
 
   // Game loop
-  const gameLoop = useCallback((timestamp: number) => {
-    let previousTime = timestamp;
-    let lag = 0;
+  const runGameLoop = useCallback((timestamp: number) => {
+    if (gameStatusRef.current !== GameStatus.RUNNING) {
+      return;
+    }
+    
+    const currentSpeed = speedRef.current;
+    
+    if (timestamp - lastUpdateTimeRef.current >= currentSpeed) {
+      lastUpdateTimeRef.current = timestamp;
+      moveSnake();
+    }
+    
+    gameLoopRef.current = requestAnimationFrame(runGameLoop);
+  }, [moveSnake]);
 
-    const loop = (currentTime: number) => {
-      if (gameStatusRef.current !== GameStatus.RUNNING) return;
-      
-      const elapsed = currentTime - previousTime;
-      previousTime = currentTime;
-      lag += elapsed;
+  // Start the game
+  const startGame = useCallback(() => {
+    setGameStatus(GameStatus.RUNNING);
+    setSnake(INITIAL_SNAKE);
+    setDirection(Direction.DOWN);
+    setScore(0);
+    setFood(generateFood());
+    lastUpdateTimeRef.current = 0;
+    
+    if (gameLoopRef.current) {
+      cancelAnimationFrame(gameLoopRef.current);
+    }
+    
+    gameLoopRef.current = requestAnimationFrame(runGameLoop);
+  }, [generateFood, runGameLoop]);
 
-      while (lag >= speed) {
-        moveSnake();
-        lag -= speed;
+  // Pause the game
+  const pauseGame = useCallback(() => {
+    if (gameStatusRef.current === GameStatus.RUNNING) {
+      setGameStatus(GameStatus.PAUSED);
+      if (gameLoopRef.current) {
+        cancelAnimationFrame(gameLoopRef.current);
+        gameLoopRef.current = null;
       }
+    }
+  }, []);
 
-      gameLoopRef.current = requestAnimationFrame(loop);
-    };
+  // Resume the game
+  const resumeGame = useCallback(() => {
+    if (gameStatusRef.current === GameStatus.PAUSED) {
+      setGameStatus(GameStatus.RUNNING);
+      lastUpdateTimeRef.current = 0;
+      gameLoopRef.current = requestAnimationFrame(runGameLoop);
+    }
+  }, [runGameLoop]);
 
-    gameLoopRef.current = requestAnimationFrame(loop);
-  }, [moveSnake, speed]);
+  // Reset the game
+  const resetGame = useCallback(() => {
+    setGameStatus(GameStatus.NOT_STARTED);
+    setSnake(INITIAL_SNAKE);
+    setDirection(Direction.DOWN);
+    setScore(0);
+    setFood(generateFood());
+    setSpeed(150);
+    
+    if (gameLoopRef.current) {
+      cancelAnimationFrame(gameLoopRef.current);
+      gameLoopRef.current = null;
+    }
+  }, [generateFood]);
 
   // Handle keyboard input
   const handleKeyDown = useCallback((e: KeyboardEvent) => {
@@ -170,26 +237,31 @@ const SnakeGame: React.FC = () => {
 
     switch (e.key) {
       case 'ArrowUp':
+        e.preventDefault(); // Prevent default behavior
         if (directionRef.current !== Direction.DOWN) {
           setDirection(Direction.UP);
         }
         break;
       case 'ArrowDown':
+        e.preventDefault();
         if (directionRef.current !== Direction.UP) {
           setDirection(Direction.DOWN);
         }
         break;
       case 'ArrowLeft':
+        e.preventDefault();
         if (directionRef.current !== Direction.RIGHT) {
           setDirection(Direction.LEFT);
         }
         break;
       case 'ArrowRight':
+        e.preventDefault();
         if (directionRef.current !== Direction.LEFT) {
           setDirection(Direction.RIGHT);
         }
         break;
       case ' ':
+        e.preventDefault(); // Prevent spacebar from scrolling
         if (gameStatusRef.current === GameStatus.NOT_STARTED) {
           startGame();
         } else if (gameStatusRef.current === GameStatus.RUNNING) {
@@ -200,50 +272,14 @@ const SnakeGame: React.FC = () => {
         break;
       case 'r':
       case 'R':
+        e.preventDefault();
         resetGame();
         break;
     }
-  }, []);
-
-  // Start the game
-  const startGame = () => {
-    setGameStatus(GameStatus.RUNNING);
-    setSnake(INITIAL_SNAKE);
-    setDirection(Direction.DOWN);
-    setScore(0);
-    setFood(generateFood());
-    if (gameLoopRef.current) {
-      cancelAnimationFrame(gameLoopRef.current);
-    }
-    gameLoopRef.current = requestAnimationFrame(gameLoop);
-  };
-
-  // Pause the game
-  const pauseGame = () => {
-    setGameStatus(GameStatus.PAUSED);
-  };
-
-  // Resume the game
-  const resumeGame = () => {
-    setGameStatus(GameStatus.RUNNING);
-    gameLoopRef.current = requestAnimationFrame(gameLoop);
-  };
-
-  // Reset the game
-  const resetGame = () => {
-    setGameStatus(GameStatus.NOT_STARTED);
-    setSnake(INITIAL_SNAKE);
-    setDirection(Direction.DOWN);
-    setScore(0);
-    setFood(generateFood());
-    if (gameLoopRef.current) {
-      cancelAnimationFrame(gameLoopRef.current);
-      gameLoopRef.current = null;
-    }
-  };
+  }, [startGame, pauseGame, resumeGame, resetGame]);
 
   // Handle mobile controls
-  const handleMobileControl = (newDirection: Direction) => {
+  const handleMobileControl = useCallback((newDirection: Direction) => {
     // Only allow direction change if it's not the opposite direction
     if (
       (newDirection === Direction.UP && directionRef.current !== Direction.DOWN) ||
@@ -253,7 +289,7 @@ const SnakeGame: React.FC = () => {
     ) {
       setDirection(newDirection);
     }
-  };
+  }, []);
 
   // Set up and clean up event listeners
   useEffect(() => {
@@ -263,6 +299,7 @@ const SnakeGame: React.FC = () => {
       window.removeEventListener('keydown', handleKeyDown);
       if (gameLoopRef.current) {
         cancelAnimationFrame(gameLoopRef.current);
+        gameLoopRef.current = null;
       }
     };
   }, [handleKeyDown]);
@@ -299,6 +336,25 @@ const SnakeGame: React.FC = () => {
     }
     return grid;
   };
+
+  // Prevent space bar from scrolling
+  useEffect(() => {
+    const preventSpaceScroll = (e: KeyboardEvent) => {
+      if (e.key === ' ' || 
+          e.key === 'ArrowUp' || 
+          e.key === 'ArrowDown' || 
+          e.key === 'ArrowLeft' || 
+          e.key === 'ArrowRight') {
+        e.preventDefault();
+      }
+    };
+    
+    window.addEventListener('keydown', preventSpaceScroll);
+    
+    return () => {
+      window.removeEventListener('keydown', preventSpaceScroll);
+    };
+  }, []);
 
   return (
     <div className="snake-game-container">
