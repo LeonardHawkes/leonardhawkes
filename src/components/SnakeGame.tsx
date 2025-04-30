@@ -140,9 +140,7 @@ const SnakeGame: React.FC = () => {
     currentSnake.unshift(head);
 
     // Check if snake ate food
-    let ateFood = false;
     if (head.x === foodRef.current.x && head.y === foodRef.current.y) {
-      ateFood = true;
       // Increase score
       const newScore = scoreRef.current + 1;
       setScore(newScore);
