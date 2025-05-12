@@ -85,7 +85,7 @@ const DJEvents = () => {
             <section className="dj-header">
                 <h1>DJ Doc Aux</h1>
                 <p>Open Format DJ</p>
-                <img src="/images/djdocaux.jpg" alt="DJ Doc Aux Logo" className="dj-logo" />
+                {/* <img src="/images/djdocaux.jpg" alt="DJ Doc Aux Logo" className="dj-logo" /> */}
             </section>
 
             <section className="latest-mix">
