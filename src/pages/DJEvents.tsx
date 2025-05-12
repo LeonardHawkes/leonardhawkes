@@ -13,16 +13,16 @@ interface Mix {
     genre: string;
 }
 
-interface Event {
-    id: number;
-    title: string;
-    venue: string;
-    date: string;
-    time: string;
-    description: string;
-    ticketLink?: string;
-    image?: string;
-}
+// interface Event {
+//     id: number;
+//     title: string;
+//     venue: string;
+//     date: string;
+//     time: string;
+//     description: string;
+//     ticketLink?: string;
+//     image?: string;
+// }
 
 const DJEvents = () => {
     const [mixes] = useState<Mix[]>([
