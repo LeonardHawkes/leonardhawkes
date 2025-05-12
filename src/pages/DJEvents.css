@@ -1,0 +1,408 @@
+/* src/pages/DJEvents.css */
+.dj-events-container {
+  padding-top: 100px; /* Ensure content doesn't hide behind fixed navbar */
+  min-height: 100vh;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.dj-header {
+  text-align: center;
+  padding: 4rem 2rem;
+  margin-bottom: 3rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.dj-header h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  background-image: linear-gradient(45deg, #3a86ff, #8338ec);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+}
+
+.dj-header p {
+  font-size: 1.5rem;
+  color: #ccc;
+}
+
+/* Latest Mix Section */
+.latest-mix {
+  margin-bottom: 4rem;
+}
+
+.latest-mix h2, 
+.upcoming-events h2, 
+.all-mixes h2,
+.booking-info h2 {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.latest-mix h2::after, 
+.upcoming-events h2::after, 
+.all-mixes h2::after,
+.booking-info h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(to right, #3a86ff, #8338ec);
+  border-radius: 3px;
+}
+
+.featured-mix {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.soundcloud-embed {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.soundcloud-embed iframe {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.mix-details {
+  color: #fff;
+}
+
+.mix-details h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #3a86ff;
+}
+
+.mix-date, .mix-genre {
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 0.5rem;
+}
+
+.mix-genre {
+  color: #8338ec;
+  font-weight: 600;
+}
+
+.mix-description {
+  font-size: 1.1rem;
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* Upcoming Events Section */
+.upcoming-events {
+  margin-bottom: 4rem;
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.event-card {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+  border-color: #3a86ff;
+}
+
+.event-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.event-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.event-card:hover .event-image img {
+  transform: scale(1.05);
+}
+
+.placeholder-image {
+  height: 100%;
+  background: linear-gradient(45deg, #3a86ff30, #8338ec30);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholder-image i {
+  font-size: 3rem;
+  color: #3a86ff;
+}
+
+.event-details {
+  padding: 1.5rem;
+}
+
+.event-details h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.event-venue, .event-date, .event-time {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  color: #ccc;
+}
+
+.event-venue i, .event-date i, .event-time i {
+  color: #3a86ff;
+  margin-right: 0.5rem;
+  width: 1rem;
+  text-align: center;
+}
+
+.event-description {
+  margin: 1rem 0;
+  color: #fff;
+  line-height: 1.5;
+}
+
+.ticket-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #3a86ff;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.ticket-button:hover {
+  background-color: #2563eb;
+  transform: translateY(-2px);
+}
+
+/* All Mixes Section */
+.all-mixes {
+  margin-bottom: 4rem;
+}
+
+.mixes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.mix-card {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mix-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+  border-color: #3a86ff;
+}
+
+.mix-info {
+  margin-top: 1.5rem;
+}
+
+.mix-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #3a86ff;
+}
+
+/* Booking Section */
+.booking-info {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 12px;
+  padding: 3rem 2rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.booking-info p {
+  font-size: 1.2rem;
+  color: #fff;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+}
+
+.booking-contact {
+  display: flex;
+  justify-content: center;
+}
+
+.booking-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background-color: #8338ec;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.booking-button:hover {
+  background-color: #6a1fd0;
+  transform: translateY(-2px);
+}
+
+.booking-button i {
+  font-size: 1.2rem;
+}
+
+/* SoundCloud Follow Section */
+.soundcloud-follow {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.follow-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.follow-container iframe {
+  margin-bottom: 1.5rem;
+}
+
+.follow-container p {
+  color: #fff;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .dj-events-container {
+    padding: 80px 1.5rem 3rem;
+  }
+  
+  .dj-header {
+    padding: 2.5rem 1.5rem;
+  }
+  
+  .dj-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .dj-header p {
+    font-size: 1.2rem;
+  }
+
+  .dj-logo {
+    max-width: 250px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 10px 30px rgba(58, 134, 255, 0.4);
+    border: 3px solid rgba(131, 56, 236, 0.7);
+    margin-top: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .dj-logo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(58, 134, 255, 0.6);
+  }
+  
+  .latest-mix h2,
+  .upcoming-events h2,
+  .all-mixes h2,
+  .booking-info h2,
+  .soundcloud-follow h2 {
+    font-size: 1.8rem;
+  }
+  
+  .featured-mix {
+    padding: 1.5rem;
+  }
+  
+  .mix-details h3 {
+    font-size: 1.5rem;
+  }
+  
+  .events-grid,
+  .mixes-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .booking-button {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .follow-container {
+    padding: 1.5rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .events-grid,
+  .mixes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .featured-mix {
+    flex-direction: row;
+  }
+  
+  .soundcloud-embed {
+    flex: 0 0 50%;
+  }
+}

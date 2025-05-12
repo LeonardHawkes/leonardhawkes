@@ -69,15 +69,15 @@ const Nav = () => {
                         Home
                     </Link>
                 </li>
-                {/* <li className="nav-item">
+                { <li className="nav-item">
                         <Link 
-                            to="/about" 
-                            className={location.pathname === '/about' ? 'nav-link active' : 'nav-link'}
+                            to="/dj-events" 
+                            className={location.pathname === '/dj-events' ? 'nav-link active' : 'nav-link'}
                             onClick={() => setMenuOpen(false)}
                         >
-                            About
+                            DJ
                         </Link>
-                    </li> */}
+                    </li> }
                     <li className="nav-item">
                         <Link 
                             to="/blog" 

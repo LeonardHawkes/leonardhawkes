@@ -1,0 +1,13 @@
+/* src/components/AudioVisualizer.css */
+.audio-visualizer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+  }
+  
+  .visualizer-canvas {
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.2);
+  }
