@@ -9,10 +9,10 @@ const Home = () => {
     const projects = [
         {
             title: 'PilotHelper',
-            subtitle: 'Secure chat application for pilots',
+            subtitle: 'Secure course application for pilots',
             imageKey: 'pilotHelper',
-            link: '',
-            description: 'PilotHelper is a secure chat application designed to support pilots with real-time assistance. It features a custom GPT-powered AI assistant for contextual responses, MongoDB for message storage, and RESTful APIs for seamless data management.',
+            link: 'https://www.pilothelper.com',
+            description: 'PilotHelper is a secure course application designed to train pilots with the necessary skills needed to offer meaningful support to their peers.',
             codeLink: '',
             techStack: ['React', 'Node.js', 'MongoDB', 'OpenAI API', 'Express']
         },
