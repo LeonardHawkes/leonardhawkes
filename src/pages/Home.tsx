@@ -103,7 +103,7 @@ const Home = () => {
             </section>
             {/* Latest Blog Post Feature */}
             <section className="latest-blog">
-                <h2>Latest from My Blog</h2>
+                <h2 className="latest-blog-title">Latest from My Blog</h2>
                 <article className="featured-blog-post">
                     <div className="blog-image">
                         <BlogPostImage />
