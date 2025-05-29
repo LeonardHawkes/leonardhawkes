@@ -236,9 +236,6 @@ const Footer = () => {
 
         <div className="footer-bottom">
           <p>&copy; {currentYear} Leonard Hawkes. All rights reserved.</p>
-          <p>
-            Built with <i className="fas fa-heart"></i> using React
-          </p>
         </div>
       </div>
     </footer>
