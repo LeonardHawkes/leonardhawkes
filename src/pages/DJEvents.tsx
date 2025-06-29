@@ -28,6 +28,23 @@ const DJEvents = () => {
     const [mixes] = useState<Mix[]>([
         {
             id: 1,
+            title: "Ghetto Code Vol. 1",
+            description: "Techno/House mix",
+            soundCloudUrl: "https://soundcloud.com/doc_aux/ghettocode-vol-1",
+            date: "June 29, 2025",
+            genre: "Techno/House/Detroit"
+        },
+        {
+            id: 2,
+            title: "Long Live Hip-Hop",
+            description: "A Hip-Hop mix",
+            soundCloudUrl: "https://soundcloud.com/doc_aux/long-live-hip-hop",
+            date: "June 28, 2025",
+            genre: "Hip-Hop"
+
+        },
+        {
+            id: 3,
             title: "Praise and Worship",
             description: "A mix of various sub-genres of gospel",
             soundCloudUrl: "https://soundcloud.com/doc_aux/praise-and-worship",
@@ -35,7 +52,7 @@ const DJEvents = () => {
             genre: "Gospel"
         },
         {
-            id: 2,
+            id: 4,
             title: "BlerDCon Closing Set",
             description: "The final DJ set of BlerDCon 2025",
             soundCloudUrl: "https://soundcloud.com/doc_aux/blerdcon-2025-closing-set",
@@ -43,7 +60,7 @@ const DJEvents = () => {
             genre: "Various"
         },
         {
-            id: 3,
+            id: 5,
             title: "BlerDCon Saturday Set",
             description: "Early Saturday Morning set at BlerDCon 2025",
             soundCloudUrl: "https://soundcloud.com/doc_aux/blerdcon-2025-saturday-set",
@@ -51,7 +68,7 @@ const DJEvents = () => {
             genre: "Various"
         },
         {
-            id: 4,
+            id: 6,
             title: "Lovers Riot",
             description: "Valentine's Day Event Hosted by Yours Truly",
             soundCloudUrl: "https://soundcloud.com/doc_aux/lovers-riot",
@@ -59,7 +76,7 @@ const DJEvents = () => {
             genre: "R&B"
         },
         {
-            id: 5,
+            id: 7,
             title: "Feel Good.json",
             description: "Uplifting positive music",
             soundCloudUrl: "https://soundcloud.com/doc_aux/feel-goodjson",
@@ -67,7 +84,7 @@ const DJEvents = () => {
             genre: "Alternative"
         },
         {
-            id: 6,
+            id: 8,
             title: "DJ Doc Aux x GoodNews Radio",
             description: "Guest appearance on GoodNews Radio in Newark NJ",
             soundCloudUrl: "https://soundcloud.com/doc_aux/dj-doc-aux-x-good-news-radio",
