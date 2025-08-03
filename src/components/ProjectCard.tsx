@@ -13,12 +13,14 @@ interface ProjectProps {
         description: string;
         codeLink: string;
         demoPath?: string; // Add optional path to demo page
+        iosDownloadLink?: string; // Optional iOS download link
+        androidDownloadLink?: string; // Optional Android download link
         techStack?: string[];
     };
 }
 
 const ProjectCard = ({project}: ProjectProps) => {
-    const {title, subtitle, imageKey, link, description, codeLink, demoPath, techStack = []} = project;
+    const {title, subtitle, imageKey, link, description, codeLink, demoPath, techStack = [], iosDownloadLink, androidDownloadLink} = project;
 
 
     const imageUrl = getImageKey(imageKey);
@@ -67,6 +69,20 @@ const ProjectCard = ({project}: ProjectProps) => {
                                 <i className='fas fa-code'></i> View Code
                             </a>
                         )}
+
+                        {/* iOS download link if available */}
+                        {iosDownloadLink && (
+                            <a href={iosDownloadLink} target='_blank' rel='noopener noreferrer' className='button ios'>
+                                <i className='fab fa-apple'></i> Download iOS
+                            </a>
+                        )}
+
+                        {/* Android download link if available */}
+                        {androidDownloadLink && (
+                            <a href={androidDownloadLink} target='_blank' rel='noopener noreferrer' className='button android'>
+                                <i className='fab fa-android'></i> Download Android
+                            </a>
+                        )}  
                     </div>
                 </div>
             </div>

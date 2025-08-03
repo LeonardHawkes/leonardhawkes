@@ -8,6 +8,16 @@ import BlogPostImage from "../components/BlogPostImage";
 const Home = () => {
     const projects = [
         {
+            title: 'VibeLink',
+            subtitle: 'Share the Vibe, Any Platform',
+            imageKey: 'vibeLink',
+            link: 'https://www.getvibelink.com',
+            iosDownloadLink: 'https://apps.apple.com/us/app/vibelink-app/id6748924820',
+            description: 'VibeLink is a mobile app that converts a music url into a shareable link, allowing users to share their favorite tracks across any platform.',
+            codeLink: '',
+            techStack: ['React Native', 'Node.js', 'Railway', 'Spotify API', 'YouTube API', 'Apple Music API (JWT)', 'Gradle', 'Kotlin', 'Xcode', 'Swift']
+        },
+        {
             title: 'PilotHelper',
             subtitle: 'Secure course application for pilots',
             imageKey: 'pilotHelper',
