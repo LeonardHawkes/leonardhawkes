@@ -8,7 +8,7 @@ import BlogPostImage from "../components/BlogPostImage";
 const Home = () => {
     const projects = [
         {
-            title: 'VibeLink',
+            title: 'VibeLink', //#1 App!
             subtitle: '🎵 Share the Vibe, Any Platform 🎵',
             imageKey: 'vibeLink',
             link: 'https://www.getvibelink.com',
