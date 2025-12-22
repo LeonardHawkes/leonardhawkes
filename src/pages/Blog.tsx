@@ -1,15 +1,28 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Blogs.css";
 
+interface BlogPost {
+  id: number;
+  title: string;
+  date: string;
+  excerpt: string;
+  link: string;
+  isInternal?: boolean;
+  image?: string;
+  tags: string[];
+}
+
 const Blog = () => {
-  const blogPosts = [
+  const blogPosts: BlogPost[] = [
     {
       id: 1,
       title: "How NLP & LLMs Are Reshaping Finance",
       date: "April 2025",
       excerpt: "An exploration of how Natural Language Processing and Large Language Models are revolutionizing the financial industry through improved analysis, automation, and customer service.",
-      link: "https://medium.com/@leonardhawkesjr/how-nlp-llms-are-reshaping-finance-c82afeda5990",
-      image: "/images/nlp-finance.jpg", // You'll need to add this image to your public/images folder
+      link: "/blog/nlp-llms-reshaping-finance",
+      isInternal: true,
+      image: "/images/nlp-finance.jpg",
       tags: ["NLP", "Finance", "Machine Learning", "LLMs"]
     }
     // You can add more blog posts here as you publish them
@@ -18,8 +31,11 @@ const Blog = () => {
   return (
     <div className="blog-container">
       <section className="blog-header">
-        <h1>Blog & Speaking</h1>
-        <p>Thoughts, articles, and talks about technology, development, and more.</p>
+        <h1>Writing & Speaking</h1>
+        <p>
+          Articles and talks by Leonard Hawkes on software engineering, artificial intelligence,
+          fintech, and building real-world applications.
+        </p>
       </section>
 
       <section className="blog-posts">
@@ -40,9 +56,15 @@ const Blog = () => {
               </div>
               <ul className="actions">
                 <li>
-                  <a href={post.link} target="_blank" rel="noopener noreferrer" className="button">
-                    Read on Medium
-                  </a>
+                  {post.isInternal ? (
+                    <Link to={post.link} className="button">
+                      Read Article
+                    </Link>
+                  ) : (
+                    <a href={post.link} target="_blank" rel="noopener noreferrer" className="button">
+                      Read on Medium
+                    </a>
+                  )}
                 </li>
               </ul>
             </div>
@@ -54,6 +76,10 @@ const Blog = () => {
         <h2>Upcoming Speaking Engagements</h2>
         <p>Stay tuned for information about future talks and presentations.</p>
         {/* Add speaking engagements here when you have them */}
+      </section>
+
+      <section className="about-link">
+        <Link to="/" className="button">About Leonard Hawkes</Link>
       </section>
     </div>
   );

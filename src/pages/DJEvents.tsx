@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import { Link } from "react-router-dom";
 import SoundCloudEmbed from "../components/SoundCloudEmbed";
 import AudioVisualizer from "../components/AudioVisualizer";
 import DJBackground from "../components/DJBackground";
@@ -28,6 +29,14 @@ const DJEvents = () => {
     const [mixes] = useState<Mix[]>([
         {
             id: 1,
+            title: "Rollbounce",
+            description: "Techno/House mix",
+            soundCloudUrl: "https://soundcloud.com/doc_aux/roll-bounce",
+            date: "December 15, 2025",
+            genre: "ATL Bass"
+        },
+        {
+            id: 2,
             title: "Ghetto Code Vol. 1",
             description: "Techno/House mix",
             soundCloudUrl: "https://soundcloud.com/doc_aux/ghettocode-vol-1",
@@ -35,7 +44,7 @@ const DJEvents = () => {
             genre: "Techno/House/Detroit"
         },
         {
-            id: 2,
+            id: 3,
             title: "Long Live Hip-Hop",
             description: "A Hip-Hop mix",
             soundCloudUrl: "https://soundcloud.com/doc_aux/long-live-hip-hop",
@@ -44,7 +53,7 @@ const DJEvents = () => {
 
         },
         {
-            id: 3,
+            id: 4,
             title: "Praise and Worship",
             description: "A mix of various sub-genres of gospel",
             soundCloudUrl: "https://soundcloud.com/doc_aux/praise-and-worship",
@@ -52,7 +61,7 @@ const DJEvents = () => {
             genre: "Gospel"
         },
         {
-            id: 4,
+            id: 5,
             title: "BlerDCon Closing Set",
             description: "The final DJ set of BlerDCon 2025",
             soundCloudUrl: "https://soundcloud.com/doc_aux/blerdcon-2025-closing-set",
@@ -60,7 +69,7 @@ const DJEvents = () => {
             genre: "Various"
         },
         {
-            id: 5,
+            id: 6,
             title: "BlerDCon Saturday Set",
             description: "Early Saturday Morning set at BlerDCon 2025",
             soundCloudUrl: "https://soundcloud.com/doc_aux/blerdcon-2025-saturday-set",
@@ -68,7 +77,7 @@ const DJEvents = () => {
             genre: "Various"
         },
         {
-            id: 6,
+            id: 7,
             title: "Lovers Riot",
             description: "Valentine's Day Event Hosted by Yours Truly",
             soundCloudUrl: "https://soundcloud.com/doc_aux/lovers-riot",
@@ -76,7 +85,7 @@ const DJEvents = () => {
             genre: "R&B"
         },
         {
-            id: 7,
+            id: 8,
             title: "Feel Good.json",
             description: "Uplifting positive music",
             soundCloudUrl: "https://soundcloud.com/doc_aux/feel-goodjson",
@@ -84,7 +93,7 @@ const DJEvents = () => {
             genre: "Alternative"
         },
         {
-            id: 8,
+            id: 9,
             title: "DJ Doc Aux x GoodNews Radio",
             description: "Guest appearance on GoodNews Radio in Newark NJ",
             soundCloudUrl: "https://soundcloud.com/doc_aux/dj-doc-aux-x-good-news-radio",
@@ -101,7 +110,8 @@ const DJEvents = () => {
 
             <section className="dj-header">
                 <h1>DJ Doc Aux</h1>
-                <p>Open Format DJ</p>
+                <p>DJ Doc Aux is the DJ alias of Leonard Hawkes, an open-format DJ and software engineer.</p>
+                <Link to="/" className="button">About Leonard Hawkes</Link>
                 {/* <img src="/images/djdocaux.jpg" alt="DJ Doc Aux Logo" className="dj-logo" /> */}
             </section>
 
