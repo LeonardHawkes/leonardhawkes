@@ -29,9 +29,9 @@ const NlpLlmsFinancePost = () => {
       "https://leonardhawkes.com/social-preview.png"
     ],
     "isPartOf": {
-    "@type": "Blog",
-    "name": "Writing & Speaking",
-    "url": "https://leonardhawkes.com/blog"
+      "@type": "Blog",
+      "name": "Writing & Speaking",
+      "url": "https://leonardhawkes.com/blog"
     },
     "sameAs": "https://medium.com/@leonardhawkesjr/how-nlp-llms-are-reshaping-finance-c82afeda5990",
     "keywords": ["NLP", "LLMs", "AI", "Fintech", "Finance"],
