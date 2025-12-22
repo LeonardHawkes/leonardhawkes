@@ -2,8 +2,19 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Blogs.css";
 
+interface BlogPost {
+  id: number;
+  title: string;
+  date: string;
+  excerpt: string;
+  link: string;
+  isInternal?: boolean;
+  image?: string;
+  tags: string[];
+}
+
 const Blog = () => {
-  const blogPosts = [
+  const blogPosts: BlogPost[] = [
     {
       id: 1,
       title: "How NLP & LLMs Are Reshaping Finance",
