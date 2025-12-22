@@ -18,8 +18,9 @@ const Snake = () => {
         <div className="project-description">
           <h2>About This Project</h2>
           <p>
-            I built this Snake game using React and TypeScript to demonstrate front-end development skills
-            and game logic implementation. The game features:
+            This interactive Snake game was built by Leonard Hawkes as a demonstration of
+            front-end engineering, real-time state management, and game logic using React
+            and TypeScript.
           </p>
           
           <ul>

@@ -164,6 +164,217 @@
   }
 }
 
+/* Blog Post Detail Page Styles */
+.blog-post-detail {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  padding: 3rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--border-color);
+  margin-bottom: 2rem;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  transition: color 0.3s ease;
+}
+
+.back-link:hover {
+  color: var(--text-color);
+}
+
+.post-header {
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+}
+
+.post-header h1 {
+  font-size: 2.5rem;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.post-meta {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.post-meta .author,
+.post-meta .date {
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+
+.post-meta .author {
+  font-weight: 600;
+}
+
+.post-content {
+  color: var(--text-muted);
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+.post-content p {
+  margin-bottom: 1.5rem;
+}
+
+.post-content h2 {
+  font-size: 1.8rem;
+  color: var(--text-color);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.post-content h3 {
+  font-size: 1.4rem;
+  color: var(--text-color);
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.external-link-cta {
+  background-color: rgba(58, 134, 255, 0.1);
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+  padding: 2rem;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.external-link-cta h3 {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+}
+
+.external-link-cta p {
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.external-link-cta .button {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: #000;
+  padding: 0.75rem 2rem;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+}
+
+.external-link-cta .button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(58, 134, 255, 0.4);
+}
+
+.post-footer {
+  border-top: 2px solid var(--border-color);
+  padding-top: 2rem;
+  margin-top: 3rem;
+}
+
+.author-bio {
+  background-color: rgba(255, 255, 255, 0.02);
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.author-bio h3 {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.author-bio p {
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.author-bio .button.secondary {
+  display: inline-block;
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  padding: 0.5rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.author-bio .button.secondary:hover {
+  background-color: var(--primary-color);
+  color: #000;
+}
+
+.about-link {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 2rem;
+}
+
+.about-link .button {
+  display: inline-block;
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  padding: 0.75rem 2rem;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.about-link .button:hover {
+  background-color: var(--primary-color);
+  color: #000;
+}
+
+@media (max-width: 768px) {
+  .blog-post-detail {
+    padding: 2rem;
+  }
+  
+  .post-header h1 {
+    font-size: 2rem;
+  }
+  
+  .post-content h2 {
+    font-size: 1.5rem;
+  }
+  
+  .post-content h3 {
+    font-size: 1.2rem;
+  }
+  
+  .external-link-cta {
+    padding: 1.5rem;
+  }
+  
+  .author-bio {
+    padding: 1.5rem;
+  }
+}
+
 @media (max-width: 480px) {
   .blog-header {
     padding: 2rem 1rem;
@@ -179,5 +390,22 @@
   
   .blog-header p {
     font-size: 1rem;
+  }
+  
+  .blog-post-detail {
+    padding: 1.5rem;
+  }
+  
+  .post-header h1 {
+    font-size: 1.75rem;
+  }
+  
+  .post-content {
+    font-size: 1rem;
+  }
+  
+  .post-meta {
+    flex-direction: column;
+    gap: 0.5rem;
   }
 }
