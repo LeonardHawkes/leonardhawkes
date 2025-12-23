@@ -1,50 +1,32 @@
-# Leonard Hawkes Portfolio &nbsp;[![Website](https://img.shields.io/website?url=https%3A%2F%2Fleonardhawkes.com&style=flat-square)](https://leonardhawkes.com) ![GitHub](https://img.shields.io/github/last-commit/LeonardHawkes/leonardhawkes.com?style=flat-square)
+# Leonard Hawkes
 
-Welcome to the source code for [leonardhawkes.com](https://leonardhawkes.com) — a developer portfolio crafted to showcase my projects, technical capabilities, and design sensibilities.
+Senior Software Engineer, founder of VibeLink, and AI & fintech speaker.  
+Inventor on a U.S. patent for systems processing real-time financial data.
 
-This site is powered by **React**, styled with custom CSS, and deployed via **GitHub Pages**.
-
----
-
-## 🚀 Scripts
-
-| Script | Description |
-|--------|-------------|
-| `npm start` | Run the app in development mode |
-| `npm run build` | Create an optimized production build |
-| `npm run deploy` | Deploy to GitHub Pages via `gh-pages` |
+🔗 https://leonardhawkes.com
 
 ---
 
-## 🛠 Tech Stack
+## About
 
-- React + TypeScript
-- CSS Modules
-- GitHub Pages Deployment
-- Custom Domain w/ SSL via GitHub + GoDaddy
+I build full-stack and mobile products across fintech, consumer applications, and music technology.  
+Currently focused on scalable systems, product-driven engineering, and real-world deployments.
 
----
-
-## 🌐 Live Site
-
-🖥️ **[leonardhawkes.com](https://leonardhawkes.com)**  
-Hosted with GitHub Pages using a custom domain.
+Founder of **VibeLink**, a cross-platform music sharing and playlist conversion app available on iOS and Android.
 
 ---
 
-## 📸 Featured Projects
+## Selected Work
 
-- **PilotHelper** – AI-powered chat assistant for pilots
-- **Vtraxx** – Spotify Top Track cassette tape visualizer
-- **Covid Tracker** – Worldwide stats with Spring + Java
-- **Classic Games** – Snake, Flappy Bird, and Java Quiz built with Java Swing
+- **VibeLink** — Universal music sharing and playlist conversion platform  
+- **PilotHelper** — Secure AI-assisted training application for pilots  
+- **Snake** — Interactive React + TypeScript game demo
 
 ---
 
-## 📦 Deployment Overview
+## Writing & Speaking
 
-1. **Built with Create React App**
-2. **Custom domain** set in `public/CNAME`
-3. **Deployed** with `gh-pages`:
-   ```bash
-   npm run deploy
+- AI & fintech talks
+- Articles on NLP, large language models, and financial systems
+
+More writing: https://leonardhawkes.com/blog
