@@ -50,7 +50,7 @@
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background: radial-gradient(circle at center, #3a86ff, #8338ec);
+    background: radial-gradient(circle at center, #3a86ff, #00d4aa);
   }
   
   .record-grooves {
@@ -153,7 +153,7 @@
   
   .wave-segment {
     width: 3px;
-    background: linear-gradient(to top, #3a86ff, #8338ec);
+    background: linear-gradient(to top, #3a86ff, #00d4aa);
     border-radius: 1px;
     animation: waveform 1.5s ease-in-out infinite alternate;
   }

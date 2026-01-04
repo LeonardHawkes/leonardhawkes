@@ -7,6 +7,7 @@ import Blog from './pages/Blog';
 import NlpLlmsFinancePost from './pages/BlogPost_NlpLlmsFinance';
 import Snake from './pages/Snake';
 import Footer from './components/Footer';
+import { ThemeProvider } from './context/ThemeContext';
 import './App.css';
 import DJEvents from './pages/DJEvents';
 
@@ -17,9 +18,10 @@ const App = () => {
   }, []);
 
   return (
-    <Router>
-      <div className='app-container'>
-        <Nav />
+    <ThemeProvider>
+      <Router>
+        <div className='app-container'>
+          <Nav />
 
         <main className='content-container'>
           <Routes>
@@ -32,8 +34,9 @@ const App = () => {
         </main>
 
         <Footer />
-      </div>
-    </Router>
+        </div>
+      </Router>
+    </ThemeProvider>
   );
 }
 

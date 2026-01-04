@@ -9,7 +9,7 @@ const Home = () => {
     const projects = [
         {
             title: 'VibeLink', //#1 App!
-            subtitle: '🎵 Share the Vibe, Any Platform 🎵',
+            subtitle: ' Share the Vibe, Any Platform ',
             imageKey: 'vibeLink',
             link: 'https://www.getvibelink.com',
             iosDownloadLink: 'https://apps.apple.com/us/app/vibelink-app/id6748924820',

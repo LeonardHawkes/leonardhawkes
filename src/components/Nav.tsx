@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useTheme } from '../context/ThemeContext';
 import './Nav.css';
 
 const Nav = () => {
-
+    const { theme, toggleTheme } = useTheme();
     const location = useLocation();
     const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
@@ -97,6 +98,9 @@ const Nav = () => {
                         </a>
                     </li>
             </ul>
+            <button className='theme-toggle' onClick={toggleTheme} aria-label='Toggle theme'>
+                <i className={theme === 'light' ? 'fas fa-moon' : 'fas fa-sun'} />
+            </button>
             <div className='social-icons'>
                 <a href='https://www.linkedin.com/in/leonardhawkes' target='_blank' rel='noopener noreferrer'>
                     <i className="fab fa-linkedin" />

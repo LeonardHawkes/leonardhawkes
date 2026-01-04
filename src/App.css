@@ -3,7 +3,7 @@
 
 :root {
   --primary-color: #3a86ff;
-  --secondary-color: #8338ec;
+  --secondary-color: #00d4aa;
   --accent-color: #ff006e;
   --dark-bg: #0d1117;
   --light-bg: #161b22;
@@ -12,6 +12,18 @@
   --card-bg: rgba(17, 24, 39, 0.8);
   --border-color: #30363d;
   --nav-height: 70px;
+}
+
+[data-theme='light'] {
+  --primary-color: #2563eb;
+  --secondary-color: #059669;
+  --accent-color: #dc2626;
+  --dark-bg: #f9fafb;
+  --light-bg: #ffffff;
+  --text-color: #111827;
+  --text-muted: #6b7280;
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --border-color: #e5e7eb;
 }
 
 * {
@@ -66,6 +78,10 @@ a:hover {
   height: 100%;
   background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
   z-index: -1;
+}
+
+[data-theme='light'] .bg-gradient {
+  background: radial-gradient(ellipse at top, #e0f2fe 0%, #f9fafb 100%);
 }
 
 /* Glow effects */
