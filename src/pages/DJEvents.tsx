@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-import { Link } from "react-router-dom";
 import SoundCloudEmbed from "../components/SoundCloudEmbed";
 import AudioVisualizer from "../components/AudioVisualizer";
 import DJBackground from "../components/DJBackground";
