@@ -1,184 +1,153 @@
 /* src/components/Nav.css */
 .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: var(--nav-height);
-    background-color: rgba(13, 17, 23, 0.85);
-    backdrop-filter: blur(10px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 100;
-    transition: all 0.3s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--nav-height);
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(20px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid var(--border-color);
+}
+
+[data-theme='light'] .navbar {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.navbar.scrolled {
+  height: 60px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 2rem;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.logo-text {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--text-color);
+  letter-spacing: -0.01em;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.nav-item {
+  margin: 0 1.5rem;
+}
+
+.nav-link {
+  font-size: 0.95rem;
+  font-weight: 400;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: color 0.2s ease;
+  color: var(--text-muted);
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--text-color);
+}
+
+.theme-toggle {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin: 0 1rem;
+  color: var(--text-muted);
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.theme-toggle:hover {
+  border-color: var(--text-color);
+  color: var(--text-color);
+}
+
+.menu-icon {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+@media screen and (max-width: 960px) {
+  .menu-icon {
+    display: block;
   }
-  
-  [data-theme='light'] .navbar {
-    background-color: rgba(249, 250, 251, 0.85);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .navbar.scrolled {
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    height: 60px;
-  }
-  
-  .navbar-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    padding: 0 2rem;
-  }
-  
-  .navbar-logo {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    margin-right: 1rem;
-  }
-  
-  .logo-text {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    letter-spacing: 1px;
-  }
-  
+
   .nav-menu {
     display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    align-items: center;
-  }
-  
-  .nav-item {
-    margin: 0 1rem;
-  }
-  
-  .nav-link {
-    font-size: 1rem;
-    font-weight: 500;
-    padding: 0.5rem 0;
-    position: relative;
-    transition: color 0.3s ease;
-  }
-  
-  .nav-link:after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: var(--primary-color);
-    transition: width 0.3s ease;
-  }
-  
-  .nav-link:hover,
-  .nav-link.active {
-    color: var(--primary-color);
-  }
-  
-  .nav-link:hover:after,
-  .nav-link.active:after {
+    flex-direction: column;
     width: 100%;
-  }
-  
-  .social-icons {
-    display: flex;
-    gap: 1.2rem;
-  }
-  
-  .social-icons a {
-    color: var(--text-color);
-    font-size: 1.2rem;
+    position: absolute;
+    top: var(--nav-height);
+    left: -100%;
+    opacity: 0;
+    padding: 1rem 0;
+    background-color: var(--dark-bg);
     transition: all 0.3s ease;
+    border-bottom: 1px solid var(--border-color);
   }
   
-  .social-icons a:hover {
-    color: var(--primary-color);
-    transform: translateY(-2px);
+  [data-theme='light'] .nav-menu {
+    background-color: var(--light-bg);
+  }
+
+  .nav-menu.active {
+    left: 0;
+    opacity: 1;
+    padding: 1rem 0;
+  }
+
+  .nav-item {
+    margin: 0.5rem 0;
+    width: 100%;
+    padding: 0.5rem 2rem;
+    text-align: center;
+  }
+
+  .social-icons {
+    display: none;
   }
   
   .theme-toggle {
-    background: transparent;
-    border: 2px solid var(--border-color);
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    margin: 0 1rem;
-    color: var(--text-color);
-    font-size: 1.1rem;
-    transition: all 0.3s ease;
+    position: absolute;
+    right: 4rem;
+    margin: 0;
   }
-  
-  .theme-toggle:hover {
-    border-color: var(--primary-color);
-    color: var(--primary-color);
-    transform: rotate(20deg);
+
+  .navbar.scrolled .nav-menu {
+    top: 60px;
   }
-  
-  .menu-icon {
-    display: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: var(--text-color);
-  }
-  
-  @media screen and (max-width: 960px) {
-    .menu-icon {
-      display: block;
-    }
-  
-    .nav-menu {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      position: absolute;
-      top: var(--nav-height);
-      left: -100%;
-      opacity: 0;
-      padding: 1rem 0;
-      background-color: var(--dark-bg);
-      transition: all 0.5s ease;
-    }
-    
-    [data-theme='light'] .nav-menu {
-      background-color: var(--light-bg);
-    }
-  
-    .nav-menu.active {
-      left: 0;
-      opacity: 1;
-      padding: 1rem 0;
-    }
-  
-    .nav-item {
-      margin: 0.5rem 0;
-      width: 100%;
-      padding: 0.5rem 2rem;
-      text-align: center;
-    }
-  
-    .social-icons {
-      display: none;
-    }
-    
-    .theme-toggle {
-      position: absolute;
-      right: 4rem;
-      margin: 0;
-    }
-  
-    .navbar.scrolled .nav-menu {
-      top: 60px;
-    }
-  }
+}
