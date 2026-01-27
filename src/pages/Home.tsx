@@ -13,6 +13,7 @@ const Home = () => {
             imageKey: 'vibeLink',
             link: 'https://www.getvibelink.com',
             iosDownloadLink: 'https://apps.apple.com/us/app/vibelink-app/id6748924820',
+            androidDownloadLink: 'https://play.google.com/store/apps/details?id=com.linksync',
             description: 'VibeLink is a mobile app that converts a music url into a shareable link, allowing users to share their favorite tracks across any platform.',
             codeLink: '',
             techStack: ['React Native', 'Node.js', 'Railway', 'Spotify API', 'YouTube API', 'Apple Music API (JWT)', 'Gradle', 'Kotlin', 'Xcode', 'Swift']
@@ -63,21 +64,14 @@ const Home = () => {
               <a href="#projects" className="button">
                 View My Work
               </a>
-              <Link to="/blog" className="button secondary">
+              <Link to="/blog" className="button alt">
                 Writing & Speaking
               </Link>
-              <Link to="/dj-events" className="button secondary">
+              <Link to="/dj-events" className="button alt">
                 DJ Doc Aux
               </Link>
             </div>
           </div>
-        </section>
-
-        <section className="identity-strip">
-          <p>
-            Roles: Software Engineer · Founder of VibeLink · AI & Fintech
-            Speaker · DJ (DJ Doc Aux)
-          </p>
         </section>
 
         {/* About Section */}

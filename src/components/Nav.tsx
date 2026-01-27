@@ -101,20 +101,6 @@ const Nav = () => {
             <button className='theme-toggle' onClick={toggleTheme} aria-label='Toggle theme'>
                 <i className={theme === 'light' ? 'fas fa-moon' : 'fas fa-sun'} />
             </button>
-            <div className='social-icons'>
-                <a href='https://www.linkedin.com/in/leonardhawkes' target='_blank' rel='noopener noreferrer'>
-                    <i className="fab fa-linkedin" />
-                </a>
-                <a href="https://www.github.com/leonardhawkes" target="_blank" rel="noopener noreferrer">
-                    <i className="fab fa-github" />
-                </a>
-                <a href="https://medium.com/@leonardhawkesjr" target="_blank" rel="noopener noreferrer">
-                    <i className="fab fa-medium" />
-                </a>
-                <a href="/PrivateResume.pdf" target="_blank" rel="noopener noreferrer">
-                    <i className="fas fa-file-alt" />
-                </a>
-            </div>
         </nav>
     );
 };

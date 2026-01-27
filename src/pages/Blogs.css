@@ -9,28 +9,27 @@
 }
 
 .blog-header {
-  text-align: center;
+  text-align: left;
   padding: 4rem 2rem;
-  margin-bottom: 2rem;
-  background-color: var(--card-bg);
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  border: 1px solid var(--border-color);
+  margin-bottom: 4rem;
+  background-color: transparent;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .blog-header h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
   color: var(--text-color);
-  font-weight: 700;
+  font-weight: 400;
+  letter-spacing: -0.03em;
 }
 
 .blog-header p {
-  font-size: 1.2rem;
+  font-size: 1.125rem;
   color: var(--text-muted);
   max-width: 800px;
-  margin: 0 auto;
-  line-height: 1.6;
+  margin: 0;
+  line-height: 1.8;
 }
 
 .blog-posts {
@@ -42,17 +41,13 @@
 
 .blog-card {
   background-color: var(--card-bg);
-  border-radius: 12px;
-  padding: 2rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  padding: 2.5rem;
+  transition: border-color 0.2s ease;
   border: 1px solid var(--border-color);
 }
 
 .blog-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-  border-color: var(--primary-color);
+  border-color: var(--text-color);
 }
 
 .blog-card-content {
@@ -67,24 +62,27 @@
 
 .blog-card .date {
   display: block;
-  font-size: 0.9rem;
-  color: var(--primary-color);
-  margin-bottom: 0.5rem;
-  font-style: italic;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .blog-card h2 {
-  font-size: 1.8rem;
-  font-weight: 700;
+  font-size: 2rem;
+  font-weight: 400;
   color: var(--text-color);
   margin-bottom: 1rem;
+  letter-spacing: -0.02em;
 }
 
 .blog-card .excerpt {
-  font-size: 1.1rem;
-  line-height: 1.6;
+  font-size: 1.125rem;
+  line-height: 1.8;
   color: var(--text-muted);
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .tags {
@@ -95,12 +93,13 @@
 }
 
 .tag {
-  background-color: rgba(58, 134, 255, 0.15);
-  color: var(--primary-color);
+  background-color: transparent;
+  color: var(--text-light);
   padding: 0.25rem 0.75rem;
-  border-radius: 50px;
-  font-size: 0.8rem;
-  font-weight: 600;
+  border: 1px solid var(--border-color);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
 }
 
 .blog-card .actions {
@@ -111,41 +110,41 @@
 
 .blog-card .button {
   display: inline-block;
-  background-color: transparent;
-  border: 2px solid var(--primary-color);
-  color: var(--primary-color);
-  padding: 0.5rem 1.5rem;
-  border-radius: 4px;
-  font-weight: 600;
+  background-color: var(--button-bg);
+  border: 1px solid var(--button-bg);
+  color: var(--button-text);
+  padding: 12px 28px;
+  font-weight: 500;
   text-decoration: none;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
 }
 
 .blog-card .button:hover {
-  background-color: var(--primary-color);
-  color: #000;
+  background-color: transparent;
+  color: var(--text-color);
+  border-color: var(--text-color);
 }
 
 .upcoming-talks {
   background-color: var(--card-bg);
-  border-radius: 12px;
-  padding: 2rem;
+  padding: 2.5rem;
   margin-bottom: 2rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   border: 1px solid var(--border-color);
 }
 
 .upcoming-talks h2 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: var(--text-color);
   margin-bottom: 1rem;
-  font-weight: 700;
+  font-weight: 400;
+  letter-spacing: -0.01em;
 }
 
 .upcoming-talks p {
   color: var(--text-muted);
-  font-size: 1.1rem;
-  line-height: 1.6;
+  font-size: 1.125rem;
+  line-height: 1.8;
 }
 
 @media (max-width: 768px) {
@@ -167,9 +166,7 @@
 /* Blog Post Detail Page Styles */
 .blog-post-detail {
   background-color: var(--card-bg);
-  border-radius: 12px;
   padding: 3rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   border: 1px solid var(--border-color);
   margin-bottom: 2rem;
 }
@@ -177,11 +174,11 @@
 .back-link {
   display: inline-flex;
   align-items: center;
-  color: var(--primary-color);
+  color: var(--text-muted);
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 400;
   margin-bottom: 2rem;
-  transition: color 0.3s ease;
+  transition: color 0.2s ease;
 }
 
 .back-link:hover {
@@ -189,7 +186,7 @@
 }
 
 .post-header {
-  border-bottom: 2px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
   padding-bottom: 2rem;
   margin-bottom: 2rem;
 }
@@ -198,8 +195,9 @@
   font-size: 2.5rem;
   color: var(--text-color);
   margin-bottom: 1rem;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
 .post-meta {
@@ -246,9 +244,8 @@
 }
 
 .external-link-cta {
-  background-color: rgba(58, 134, 255, 0.1);
-  border: 2px solid var(--primary-color);
-  border-radius: 8px;
+  background-color: transparent;
+  border: 1px solid var(--border-color);
   padding: 2rem;
   margin: 2rem 0;
   text-align: center;
@@ -259,6 +256,7 @@
   color: var(--text-color);
   margin-bottom: 0.5rem;
   margin-top: 0;
+  font-weight: 400;
 }
 
 .external-link-cta p {
@@ -268,19 +266,19 @@
 
 .external-link-cta .button {
   display: inline-block;
-  background-color: var(--primary-color);
-  color: #000;
+  background-color: var(--button-bg);
+  color: var(--button-text);
   padding: 0.75rem 2rem;
-  border-radius: 4px;
-  font-weight: 600;
+  font-weight: 500;
   text-decoration: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: none;
+  transition: all 0.2s ease;
+  border: 1px solid var(--button-bg);
 }
 
 .external-link-cta .button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(58, 134, 255, 0.4);
+  background-color: transparent;
+  color: var(--text-color);
+  border-color: var(--text-color);
 }
 
 .post-footer {
@@ -290,9 +288,8 @@
 }
 
 .author-bio {
-  background-color: rgba(255, 255, 255, 0.02);
+  background-color: transparent;
   padding: 2rem;
-  border-radius: 8px;
   border: 1px solid var(--border-color);
 }
 
@@ -300,30 +297,30 @@
   font-size: 1.5rem;
   color: var(--text-color);
   margin-bottom: 1rem;
-  font-weight: 700;
+  font-weight: 400;
 }
 
 .author-bio p {
   color: var(--text-muted);
-  line-height: 1.6;
+  line-height: 1.8;
   margin-bottom: 1.5rem;
 }
 
 .author-bio .button.secondary {
   display: inline-block;
   background-color: transparent;
-  border: 2px solid var(--primary-color);
-  color: var(--primary-color);
+  border: 1px solid var(--text-color);
+  color: var(--text-color);
   padding: 0.5rem 1.5rem;
-  border-radius: 4px;
-  font-weight: 600;
+  font-weight: 500;
   text-decoration: none;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .author-bio .button.secondary:hover {
-  background-color: var(--primary-color);
-  color: #000;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border-color: var(--button-bg);
 }
 
 .about-link {
@@ -335,18 +332,18 @@
 .about-link .button {
   display: inline-block;
   background-color: transparent;
-  border: 2px solid var(--primary-color);
-  color: var(--primary-color);
+  border: 1px solid var(--text-color);
+  color: var(--text-color);
   padding: 0.75rem 2rem;
-  border-radius: 4px;
-  font-weight: 600;
+  font-weight: 500;
   text-decoration: none;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .about-link .button:hover {
-  background-color: var(--primary-color);
-  color: #000;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border-color: var(--button-bg);
 }
 
 @media (max-width: 768px) {

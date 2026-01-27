@@ -111,7 +111,6 @@ const DJEvents = () => {
             <section className="dj-header">
                 <h1>DJ Doc Aux</h1>
                 <p>DJ Doc Aux is the DJ alias of Leonard Hawkes, an open-format DJ and software engineer.</p>
-                <Link to="/" className="button">About Leonard Hawkes</Link>
                 {/* <img src="/images/djdocaux.jpg" alt="DJ Doc Aux Logo" className="dj-logo" /> */}
             </section>
 

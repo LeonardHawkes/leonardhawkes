@@ -1,136 +1,193 @@
 /* src/components/ProjectCard.css */
 .project-card {
-    background-color: var(--card-bg);
-    border-radius: 12px;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-bottom: 2rem;
-    border: 1px solid var(--border-color);
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-  
-  .project-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-    border-color: var(--primary-color);
-  }
-  
-  .project-card-header {
-    padding: 1.5rem 1.5rem 0;
+  background-color: var(--card-bg);
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+  margin-bottom: 0;
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.project-card:hover {
+  border-color: var(--text-color);
+}
+
+.project-card-header {
+  padding: 2rem 2rem 0;
+}
+
+.project-card-header h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.project-card-header h3 {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.project-card .image-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+  background-color: var(--hover-bg);
+}
+
+.project-card .image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.2s ease;
+}
+
+.project-card:hover .image-container img {
+  opacity: 0.9;
+}
+
+.project-card-content {
+  padding: 2rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card-description {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+  line-height: 1.7;
+}
+
+.project-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.project-links a {
+  color: var(--text-color);
+  transition: color 0.2s ease;
+}
+
+.project-links a:hover {
+  color: var(--text-muted);
+}
+
+.project-card .button {
+  font-size: 0.85rem;
+  padding: 10px 20px;
+  background-color: var(--button-bg);
+  border: 1px solid var(--button-bg);
+  color: var(--button-text);
+}
+
+.project-card .button:hover {
+  background-color: transparent;
+  color: var(--text-color);
+  border-color: var(--text-color);
+}
+
+.project-card .button.secondary {
+  background-color: transparent;
+  border-color: var(--border-color);
+  color: var(--text-color);
+}
+
+.project-card .button.secondary:hover {
+  background-color: var(--hover-bg);
+  border-color: var(--text-color);
+  color: var(--text-color);
+}
+
+.project-card .button.primary {
+  background-color: var(--button-bg);
+  border-color: var(--button-bg);
+  color: var(--button-text);
+}
+
+.project-card .button.primary:hover {
+  background-color: transparent;
+  color: var(--text-color);
+  border-color: var(--text-color);
+}
+
+.project-card .button.ios,
+.project-card .button.android {
+  background-color: var(--button-bg);
+  border-color: var(--button-bg);
+  color: var(--button-text);
+}
+
+.project-card .button.ios:hover,
+.project-card .button.android:hover {
+  background-color: transparent;
+  color: var(--text-color);
+  border-color: var(--text-color);
+}
+
+/* Tech tag styles */
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tech-tag {
+  background-color: transparent;
+  color: var(--text-light);
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  border: 1px solid var(--border-color);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+/* Grid layout for projects */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
   
   .project-card-header h2 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-  }
-  
-  .project-card-header h3 {
-    color: var(--primary-color);
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    font-weight: 500;
-  }
-  
-  .project-card .image-container {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    padding-top: 56.25%; /* 16:9 aspect ratio */
-  }
-  
-  .project-card .image-container img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-  }
-  
-  .project-card:hover .image-container img {
-    transform: scale(1.05);
-  }
-  
-  .project-card-content {
-    padding: 1.5rem;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
+    font-size: 1.25rem;
   }
   
   .project-card-description {
-    color: var(--text-muted);
-    font-size: 0.95rem;
-    margin-bottom: 1.5rem;
-    flex-grow: 1;
-  }
-  
-  .project-card-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: auto;
-  }
-  
-  .project-links {
-    display: flex;
-    gap: 1rem;
-  }
-  
-  .project-links a {
-    color: var(--text-color);
-    transition: color 0.3s ease;
-  }
-  
-  .project-links a:hover {
-    color: var(--primary-color);
-  }
-  
-  .project-card .button {
     font-size: 0.9rem;
-    padding: 0.5rem 1.2rem;
   }
   
-  /* Tech tag styles */
-  .tech-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
+  .project-card-header,
+  .project-card-content {
+    padding: 1.5rem;
   }
-  
-  .tech-tag {
-    background-color: rgba(58, 134, 255, 0.15);
-    color: var(--primary-color);
-    font-size: 0.75rem;
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-    font-weight: 500;
-  }
-  
-  /* Grid layout for projects */
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 2rem;
-    padding: 0 1rem;
-  }
-  
-  @media (max-width: 768px) {
-    .projects-grid {
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-    
-    .project-card-header h2 {
-      font-size: 1.25rem;
-    }
-    
-    .project-card-description {
-      font-size: 0.9rem;
-    }
-  }
+}

@@ -235,7 +235,23 @@ const Footer = () => {
         </div>
 
         <div className="footer-bottom">
-          <p>&copy; {currentYear} Leonard Hawkes. All rights reserved.</p>
+          <div className="footer-bottom-content">
+            <div className="footer-social-icons">
+              <a href='https://www.linkedin.com/in/leonardhawkes' target='_blank' rel='noopener noreferrer'>
+                <i className="fab fa-linkedin" />
+              </a>
+              <a href="https://www.github.com/leonardhawkes" target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-github" />
+              </a>
+              <a href="https://medium.com/@leonardhawkesjr" target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-medium" />
+              </a>
+              <a href="/PrivateResume.pdf" target="_blank" rel="noopener noreferrer">
+                <i className="fas fa-file-alt" />
+              </a>
+            </div>
+            <p>&copy; {currentYear} Leonard Hawkes. All rights reserved.</p>
+          </div>
         </div>
       </div>
     </footer>
