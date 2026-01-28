@@ -54,9 +54,9 @@ const Home = () => {
         <section className="hero-section">
           <div className="hero-content">
             <h1>Leonard Hawkes</h1>
-            <h2>Software Engineer • Founder • Speaker</h2>
+            <h2>Software Engineer • CEO • Speaker</h2>
             <p>
-              Full-stack Software Engineer III at JPMorgan Chase. Founder of
+              Full-stack Software Engineer III at JPMorgan Chase. CEO of Hawkes Technologies. Founder of
               VibeLink (iOS/Android). Public speaker on AI in fintech. Inventor on a U.S.
               patent application.
             </p>
@@ -83,16 +83,16 @@ const Home = () => {
           <div className="about-content">
             <p>
               Leonard Hawkes is a full-stack software engineer with
-              approximately five years of professional experience building,
+              approximately seven years of professional experience building,
               shipping, and scaling production systems. He works as a Software
               Engineer III at JPMorgan Chase, contributing to high-throughput
               real-time payments platforms and leading frontend and full-stack
               development for critical financial systems.
             </p>
             <p>
-              Outside of work, he builds consumer products end-to-end, including
-              VibeLink—an iOS/Android app that converts and shares music links
-              across Spotify, Apple Music, and YouTube. He speaks on artificial
+              Outside of work, he is the CEO of Hawkes Technologies, owning and operating 
+              several consumer products including VibeLink—an iOS/Android app that converts 
+              and shares music links across Spotify, Apple Music, and YouTube. He speaks on artificial
               intelligence and fintech, and is listed as an inventor on a U.S.
               patent application related to processing streams of balance
               transfer data.
