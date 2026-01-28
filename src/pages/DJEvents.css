@@ -133,6 +133,10 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: row;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .event-card:hover {
@@ -142,7 +146,7 @@
 }
 
 .event-image {
-  height: 200px;
+  flex: 0 0 300px;
   overflow: hidden;
 }
 
@@ -251,6 +255,17 @@
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
   color: #3a86ff;
+}
+
+/* Show More Button */
+.show-more-container {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.show-more-button {
+  padding: 12px 32px;
+  font-size: 1rem;
 }
 
 /* Booking Section */
@@ -382,6 +397,14 @@
     grid-template-columns: 1fr;
   }
   
+  .event-card {
+    flex-direction: column;
+  }
+  
+  .event-image {
+    flex: 0 0 250px;
+  }
+
   .booking-button {
     width: 100%;
     justify-content: center;

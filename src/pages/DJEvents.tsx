@@ -13,18 +13,32 @@ interface Mix {
     genre: string;
 }
 
-// interface Event {
-//     id: number;
-//     title: string;
-//     venue: string;
-//     date: string;
-//     time: string;
-//     description: string;
-//     ticketLink?: string;
-//     image?: string;
-// }
+interface Event {
+    id: number;
+    title: string;
+    venue: string;
+    date: string;
+    time: string;
+    description: string;
+    ticketLink?: string;
+    image?: string;
+}
 
 const DJEvents = () => {
+    const [showAllMixes, setShowAllMixes] = useState(false);
+    const [events] = useState<Event[]>([
+        {
+            id: 1,
+            title: "For the Yearners",
+            venue: "Hart Bar BK",
+            date: "February 14, 2026",
+            time: "7:00 PM - 11:00 PM",
+            description: "Join me for a special Valentine's Day event at Hart Bar BK, spinning the best in R&B and Neo-Soul to set the perfect mood for the night.",
+            ticketLink: "https://posh.vip/e/for-the-yearners-18",
+            image: "/ForTheYearners.jpeg"
+        }
+    ]);
+
     const [mixes] = useState<Mix[]>([
         {
             id: 1,
@@ -109,8 +123,33 @@ const DJEvents = () => {
 
             <section className="dj-header">
                 <h1>DJ Doc Aux</h1>
-                <p>DJ Doc Aux is the DJ alias of Leonard Hawkes, an open-format DJ and software engineer.</p>
+                <p>DJ Doc Aux is the DJ alias of Leonard Hawkes, an international DJ and software engineer.</p>
                 {/* <img src="/images/djdocaux.jpg" alt="DJ Doc Aux Logo" className="dj-logo" /> */}
+            </section>
+
+            <section className="upcoming-events">
+                <h2>Upcoming Events</h2>
+                {events.length === 0 ? (
+                    <p>No upcoming events at the moment. Please check back later!</p>
+                ) : (
+                    events.map((event) => (
+                        <div key={event.id} className="event-card">
+                            {event.image && <img src={event.image} alt={event.title} className="event-image" />}
+                            <div className="event-details">
+                                <h3>{event.title}</h3>
+                                <p><strong>Venue:</strong> {event.venue}</p>
+                                <p><strong>Date:</strong> {event.date}</p>
+                                <p><strong>Time:</strong> {event.time}</p>
+                                <p>{event.description}</p>
+                                {event.ticketLink && (
+                                    <a href={event.ticketLink} target="_blank" rel="noopener noreferrer" className="button ticket-button">
+                                        Get Tickets
+                                    </a>
+                                )}
+                            </div>
+                        </div>
+                    ))
+                )}
             </section>
 
             <section className="latest-mix">
@@ -142,7 +181,7 @@ const DJEvents = () => {
             <section className="all-mixes">
                 <h2>All Mixes</h2>
                 <div className="mixes-grid">
-                    {mixes.map((mix) => (
+                    {(showAllMixes ? mixes : mixes.slice(0, 3)).map((mix) => (
                         <div className="mix-card" key={mix.id}>
                             <div className="soundcloud-embed">
                                 <SoundCloudEmbed
@@ -162,6 +201,16 @@ const DJEvents = () => {
                         </div>
                     ))}
                 </div>
+                {mixes.length > 3 && (
+                    <div className="show-more-container">
+                        <button 
+                            className="button show-more-button" 
+                            onClick={() => setShowAllMixes(!showAllMixes)}
+                        >
+                            {showAllMixes ? 'Show Less' : `Show More Mixes (${mixes.length - 3} more)`}
+                        </button>
+                    </div>
+                )}
             </section>
 
             <section className="booking-info">
