@@ -112,8 +112,19 @@ const DJEvents = () => {
             soundCloudUrl: "https://soundcloud.com/doc_aux/dj-doc-aux-x-good-news-radio",
             date: "September 13, 2024",
             genre: "Hip-Hop/Afrobeats/R&B"
+        },
+        {
+            id: 10,
+            title: "GeekNik Sunday Set",
+            description: "Closing set for GeekNik 2026",
+            soundCloudUrl: "https://soundcloud.com/doc_aux/blerdcon-2026-closing-set",
+            date: "March 10, 2026",
+            genre: "Various"
         }
     ]);
+
+    const sortedMixes = [...mixes].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    const upcomingEvents = events.filter(event => new Date(event.date) >= new Date());
 
     const bookingEmail = "djdocaux@gmail.com";
 
@@ -129,10 +140,10 @@ const DJEvents = () => {
 
             <section className="upcoming-events">
                 <h2>Upcoming Events</h2>
-                {events.length === 0 ? (
-                    <p>No upcoming events at the moment. Please check back later!</p>
+                {upcomingEvents.length === 0 ? (
+                    <p style={{ display: 'flex', justifyContent: 'center' }}>No upcoming events at the moment. Please check back later!</p>
                 ) : (
-                    events.map((event) => (
+                    upcomingEvents.map((event) => (
                         <div key={event.id} className="event-card">
                             {event.image && <img src={event.image} alt={event.title} className="event-image" />}
                             <div className="event-details">
@@ -157,8 +168,8 @@ const DJEvents = () => {
                 <div className="featured-mix">
                     <div className="soundcloud-embed">
                         <SoundCloudEmbed
-                            url={mixes[0].soundCloudUrl}
-                            title={mixes[0].title}
+                            url={sortedMixes[0].soundCloudUrl}
+                            title={sortedMixes[0].title}
                             height={300}
                             visual
                             color="#3a86ff"
@@ -171,17 +182,17 @@ const DJEvents = () => {
                         />
                     </div>
                     <div className="mix-details">
-                        <h3>{mixes[0].title}</h3>
-                        <p className="mix-date">{mixes[0].date}</p>
-                        <p className="mix-genre">{mixes[0].genre}</p>
-                        <p className="mix-description">{mixes[0].description}</p>
+                        <h3>{sortedMixes[0].title}</h3>
+                        <p className="mix-date">{sortedMixes[0].date}</p>
+                        <p className="mix-genre">{sortedMixes[0].genre}</p>
+                        <p className="mix-description">{sortedMixes[0].description}</p>
                     </div>
                 </div>
             </section>
             <section className="all-mixes">
                 <h2>All Mixes</h2>
                 <div className="mixes-grid">
-                    {(showAllMixes ? mixes : mixes.slice(0, 3)).map((mix) => (
+                    {(showAllMixes ? sortedMixes : sortedMixes.slice(0, 3)).map((mix) => (
                         <div className="mix-card" key={mix.id}>
                             <div className="soundcloud-embed">
                                 <SoundCloudEmbed
@@ -201,13 +212,13 @@ const DJEvents = () => {
                         </div>
                     ))}
                 </div>
-                {mixes.length > 3 && (
+                {sortedMixes.length > 3 && (
                     <div className="show-more-container">
                         <button 
                             className="button show-more-button" 
                             onClick={() => setShowAllMixes(!showAllMixes)}
                         >
-                            {showAllMixes ? 'Show Less' : `Show More Mixes (${mixes.length - 3} more)`}
+                            {showAllMixes ? 'Show Less' : `Show More Mixes (${sortedMixes.length - 3} more)`}
                         </button>
                     </div>
                 )}
