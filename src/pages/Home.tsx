@@ -19,6 +19,15 @@ const Home = () => {
             techStack: ['React Native', 'Node.js', 'Railway', 'Spotify API', 'YouTube API', 'Apple Music API (JWT)', 'Gradle', 'Kotlin', 'Xcode', 'Swift']
         },
         {
+          title: 'Homecoming Love',
+          subtitle: 'Black professional matchmaking platform',
+          imageKey: 'HomecomingLogo',
+          link: 'https://www.homecominglove.com',
+          description: 'Homecoming Love is a matchmaking platform designed to connect Black professionals seeking meaningful relationships. The platform emphasizes shared values, cultural connection, and community engagement to foster genuine connections.',
+          codeLink: '',
+          techStack: ['React', 'Node.js', 'Auth0', 'Railway', 'Firebase']          
+        },
+        {
             title: 'PilotHelper',
             subtitle: 'Secure course application for pilots',
             imageKey: 'pilotHelper',

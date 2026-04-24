@@ -5,6 +5,7 @@ import snakeGameImg from '../assets/SnakeGame.gif';
 import flappyBirdImg from '../assets/FlappyBird.gif';
 import javaQuizImg from '../assets/OnlineTest.gif';
 import vibeLinkImg from '../assets/vibelink-logo.png';
+import HomecomingLogo from '../assets/HomecomingLogo.jpg';
 
 //Map of image keys to imported images
 const imageMap: Record<string, string> = {
@@ -14,7 +15,8 @@ const imageMap: Record<string, string> = {
     'covidTracker': covidTrackerImg,
     'snakeGame': snakeGameImg,
     'flappyBird': flappyBirdImg,
-    'javaQuiz': javaQuizImg
+    'javaQuiz': javaQuizImg,
+    'HomecomingLogo': HomecomingLogo
 };
 
 /**
